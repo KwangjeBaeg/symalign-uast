@@ -1,0 +1,231 @@
+{
+  "samples": [
+    {
+      "file": "appendix_E1_quantum_circuit_template.json",
+      "domain": "Quantum Computing",
+      "paper_reference": "Appendix E.2.1",
+      "node_count": 38,
+      "edge_count": 37,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 3,
+        "uast_function": 1,
+        "uast_call": 33
+      },
+      "description": "Appendix E1: Single function with sequential quantum gate calls (Qiskit). 38 nodes (1 uast_function, 33 uast_call, 3 uast_package). Illustrates how sequential method calls map to parent-child edges."
+    },
+    {
+      "file": "appendix_E2_networking_module.json",
+      "domain": "Networking",
+      "paper_reference": "Appendix E.2.2",
+      "node_count": 104,
+      "edge_count": 103,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 7,
+        "uast_call": 53,
+        "uast_class": 1,
+        "uast_function": 30,
+        "uast_comment": 12
+      },
+      "description": "Appendix E2: Multi-function networking module (socket/ssl). 104 nodes (30 uast_function, 53 uast_call, 7 uast_package, 1 uast_class). Illustrates nested function hierarchies and conditional control flow."
+    },
+    {
+      "file": "appendix_E3_class_with_imports.json",
+      "domain": "Quantum Computing",
+      "paper_reference": "Appendix E.2.3",
+      "node_count": 445,
+      "edge_count": 444,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 67,
+        "uast_package": 17,
+        "uast_call": 329,
+        "uast_class": 1,
+        "uast_function": 30
+      },
+      "description": "Appendix E3: Class with extensive library dependencies (DensityMatrix quantum state). Illustrates UAST handling of complex class hierarchies and import-heavy modules."
+    },
+    {
+      "file": "domain_quantum_computing.json",
+      "domain": "Quantum Computing",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 246,
+      "edge_count": 245,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 6,
+        "uast_package": 5,
+        "uast_class": 1,
+        "uast_function": 14,
+        "uast_call": 219
+      },
+      "description": "Representative sample: Quantum Computing domain (Qiskit-based)."
+    },
+    {
+      "file": "domain_testing.json",
+      "domain": "Testing",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 266,
+      "edge_count": 265,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 4,
+        "uast_package": 10,
+        "uast_class": 1,
+        "uast_function": 60,
+        "uast_call": 190
+      },
+      "description": "Representative sample: Testing domain (unittest/pytest-based)."
+    },
+    {
+      "file": "domain_ml_ai.json",
+      "domain": "ML/AI",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 179,
+      "edge_count": 178,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 6,
+        "uast_function": 40,
+        "uast_call": 119,
+        "uast_comment": 11,
+        "uast_class": 2
+      },
+      "description": "Representative sample: ML/AI domain (PyTorch/sklearn-based)."
+    },
+    {
+      "file": "domain_devops.json",
+      "domain": "DevOps",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 267,
+      "edge_count": 266,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 9,
+        "uast_package": 7,
+        "uast_class": 7,
+        "uast_function": 84,
+        "uast_call": 159
+      },
+      "description": "Representative sample: DevOps domain (CI/CD tooling)."
+    },
+    {
+      "file": "domain_scientific_computing.json",
+      "domain": "Scientific Computing",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 210,
+      "edge_count": 209,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 22,
+        "uast_function": 14,
+        "uast_call": 158,
+        "uast_comment": 15
+      },
+      "description": "Representative sample: Scientific Computing domain (NumPy/SciPy-based)."
+    },
+    {
+      "file": "domain_gui.json",
+      "domain": "GUI",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 268,
+      "edge_count": 267,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 6,
+        "uast_class": 2,
+        "uast_comment": 61,
+        "uast_function": 29,
+        "uast_call": 169
+      },
+      "description": "Representative sample: GUI domain (desktop application)."
+    },
+    {
+      "file": "domain_networking.json",
+      "domain": "Networking",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 72,
+      "edge_count": 71,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 2,
+        "uast_package": 3,
+        "uast_class": 1,
+        "uast_function": 5,
+        "uast_call": 60
+      },
+      "description": "Representative sample: Networking domain (socket/protocol implementation)."
+    },
+    {
+      "file": "domain_game_development.json",
+      "domain": "Game Development",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 186,
+      "edge_count": 185,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 7,
+        "uast_class": 4,
+        "uast_function": 49,
+        "uast_call": 112,
+        "uast_comment": 13
+      },
+      "description": "Representative sample: Game Development domain."
+    },
+    {
+      "file": "domain_security.json",
+      "domain": "Security",
+      "paper_reference": "§3.1 Dataset, §3.3 Zero-shot evaluation",
+      "node_count": 39,
+      "edge_count": 38,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 16,
+        "uast_package": 1,
+        "uast_class": 1,
+        "uast_call": 19,
+        "uast_function": 1
+      },
+      "description": "Representative sample: Security domain (held-out zero-shot class)."
+    },
+    {
+      "file": "domain_data_processing.json",
+      "domain": "Data Processing",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 13,
+      "edge_count": 12,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 5,
+        "uast_package": 3,
+        "uast_class": 1,
+        "uast_function": 1,
+        "uast_call": 2
+      },
+      "description": "Representative sample: Data Processing domain (JSON/pandas pipeline)."
+    },
+    {
+      "file": "domain_web.json",
+      "domain": "Web",
+      "paper_reference": "§3.1 Dataset",
+      "node_count": 15,
+      "edge_count": 14,
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_comment": 3,
+        "uast_package": 3,
+        "uast_class": 1,
+        "uast_function": 4,
+        "uast_call": 3
+      },
+      "description": "Representative sample: Web domain (HTTP/requests-based)."
+    }
+  ],
+  "obfuscation_demo": {
+    "file": "obfuscation_demo.json",
+    "type": "demo",
+    "purpose": "Illustrates C0-C4 obfuscation conditions vs. invariant UAST topology (paper §3.2, Table 1)",
+    "note": "Synthetic example — not from training/test data. Shows why GNN achieves Retention=1.000."
+  }
+}

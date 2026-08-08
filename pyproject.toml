@@ -1,0 +1,19 @@
+[project]
+name = "symalign-uast"
+version = "0.1.0"
+description = "Sample-only implementation release for SymAlign-UAST."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+	"torch>=2.2,<2.7",
+	"torch-geometric>=2.5,<2.7",
+	"numpy>=1.26,<3",
+	"scikit-learn>=1.4,<1.7",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"

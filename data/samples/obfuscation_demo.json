@@ -1,0 +1,436 @@
+{
+  "_metadata": {
+    "purpose": "Illustrative walkthrough: how the same Python file is processed by (1) Pretrained models under C0-C4, and (2) the GNN — whose input is invariant. Based on actual pipeline code in src/data/obfuscation.py and src/data/subtree_extractor.py.",
+    "paper_reference": "§2.2, §3.2 (Table 1), Appendix H",
+    "note": "This is a hand-constructed example that faithfully follows the real pipeline. The domain sample files (domain_*.json, appendix_E*.json) show the actual GNN input format."
+  },
+  "step1_uast_parsing": {
+    "description": "Step 1: Python source → UAST JSON (via tree-sitter). The UAST stores structural nodes — the 'code_snippet' field records what construct was parsed.",
+    "example_python_source": "# A scientific computing file (synthetic illustration)\nimport numpy as np\nfrom scipy import signal\n\ndef process_signal(data, window_size):\n    filtered = signal.savgol_filter(data, window_size, 3)\n    result = np.fft.fft(filtered)\n    return result\n\ndef compute_spectrum(samples, rate):\n    freqs = np.fft.fftfreq(len(samples), 1.0 / rate)\n    power = np.abs(samples) ** 2\n    return freqs, power",
+    "resulting_uast_nodes": [
+      {
+        "id": 0,
+        "node_type": "uast_root",
+        "code_snippet": "root"
+      },
+      {
+        "id": 1,
+        "node_type": "uast_package",
+        "code_snippet": "uast_package numpy",
+        "parents": [
+          0
+        ],
+        "children": []
+      },
+      {
+        "id": 2,
+        "node_type": "uast_package",
+        "code_snippet": "uast_package scipy.signal",
+        "parents": [
+          0
+        ],
+        "children": []
+      },
+      {
+        "id": 3,
+        "node_type": "uast_function",
+        "code_snippet": "uast_function process_signal",
+        "parents": [
+          0
+        ],
+        "children": [
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "id": 4,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call signal.savgol_filter",
+        "parents": [
+          3
+        ],
+        "children": []
+      },
+      {
+        "id": 5,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call np.fft.fft",
+        "parents": [
+          3
+        ],
+        "children": []
+      },
+      {
+        "id": 6,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call return",
+        "parents": [
+          3
+        ],
+        "children": []
+      },
+      {
+        "id": 7,
+        "node_type": "uast_function",
+        "code_snippet": "uast_function compute_spectrum",
+        "parents": [
+          0
+        ],
+        "children": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "id": 8,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call np.fft.fftfreq",
+        "parents": [
+          7
+        ],
+        "children": []
+      },
+      {
+        "id": 9,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call np.abs",
+        "parents": [
+          7
+        ],
+        "children": []
+      },
+      {
+        "id": 10,
+        "node_type": "uast_call",
+        "code_snippet": "uast_call return",
+        "parents": [
+          7
+        ],
+        "children": []
+      }
+    ]
+  },
+  "step2_pretrained_model_path": {
+    "description": "Step 2a (Pretrained model path): obfuscation.py reconstruct_code_text() extracts import lines and function names from the UAST as a code-like text string. This string is what CodeBERT / GraphCodeBERT / TF-IDF tokenize. C1-C4 apply progressive token replacement to this string only.",
+    "reconstructed_text_C0": "import numpy\nimport scipy.signal\ndef process_signal(): pass\ndef compute_spectrum(): pass",
+    "conditions": {
+      "C0": {
+        "label": "Clean (0% obfuscation)",
+        "text_input_to_pretrained_model": "import numpy\nimport scipy.signal\ndef process_signal(): pass\ndef compute_spectrum(): pass",
+        "domain_signal_strength": "Strong — library names (numpy, scipy) are highly discriminative"
+      },
+      "C1": {
+        "label": "Import masking only — library names replaced",
+        "text_input_to_pretrained_model": "import LIB_a3f2b1\nimport LIB_c8d4e9\ndef process_signal(): pass\ndef compute_spectrum(): pass",
+        "domain_signal_strength": "Weak — libraries gone; function names still carry some signal"
+      },
+      "C2": {
+        "label": "Identifier stripping only — non-library names replaced",
+        "text_input_to_pretrained_model": "import numpy\nimport scipy.signal\ndef ID_m3n4o5(): pass\ndef ID_v2w3x4(): pass",
+        "domain_signal_strength": "Moderate — libraries still visible; function semantics lost"
+      },
+      "C3": {
+        "label": "Partial obfuscation — 50% of unique tokens replaced",
+        "text_input_to_pretrained_model": "import numpy\nimport OBF_h4i5j6\ndef OBF_k7l8m9(): pass\ndef compute_spectrum(): pass",
+        "domain_signal_strength": "Partial — degraded but residual signal present"
+      },
+      "C4": {
+        "label": "Full obfuscation — 100% of unique tokens replaced",
+        "text_input_to_pretrained_model": "import OBF_a1b2c3\nimport OBF_d4e5f6\ndef OBF_g7h8i9(): pass\ndef OBF_j0k1l2(): pass",
+        "domain_signal_strength": "None — all surface-form signal is destroyed"
+      }
+    }
+  },
+  "step2_gnn_path": {
+    "description": "Step 2b (GNN path): subtree_extractor.py encode_node_features() converts each node to a one-hot vector over 6 node types. The identifier in code_snippet is NOT used — only the node_type prefix is encoded. This representation is therefore IDENTICAL across C0-C4.",
+    "node_feature_encoding": {
+      "method": "One-hot over 6 UAST node types (src/data/subtree_extractor.py:UAST_NODE_TYPES)",
+      "types": [
+        "uast_root",
+        "uast_function",
+        "uast_class",
+        "uast_call",
+        "uast_package",
+        "uast_comment"
+      ],
+      "feature_dim": 6
+    },
+    "gnn_input": {
+      "description": "What the GNN actually receives — identical for C0, C1, C2, C3, C4. The actual domain sample files (domain_*.json, appendix_E*.json in this directory) show real examples of this format.",
+      "node_features_x": [
+        {
+          "id": 0,
+          "node_type": "uast_root",
+          "one_hot": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "root"
+        },
+        {
+          "id": 1,
+          "node_type": "uast_package",
+          "one_hot": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "code_snippet_ignored": "uast_package <ANY>"
+        },
+        {
+          "id": 2,
+          "node_type": "uast_package",
+          "one_hot": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "code_snippet_ignored": "uast_package <ANY>"
+        },
+        {
+          "id": 3,
+          "node_type": "uast_function",
+          "one_hot": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_function <ANY>"
+        },
+        {
+          "id": 4,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        },
+        {
+          "id": 5,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        },
+        {
+          "id": 6,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        },
+        {
+          "id": 7,
+          "node_type": "uast_function",
+          "one_hot": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_function <ANY>"
+        },
+        {
+          "id": 8,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        },
+        {
+          "id": 9,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        },
+        {
+          "id": 10,
+          "node_type": "uast_call",
+          "one_hot": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "code_snippet_ignored": "uast_call <ANY>"
+        }
+      ],
+      "edge_index": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ]
+      ],
+      "node_type_distribution": {
+        "uast_root": 1,
+        "uast_package": 2,
+        "uast_function": 2,
+        "uast_call": 6
+      },
+      "invariance_note": "The one-hot features and edge_index above are IDENTICAL whether the input was the C0 Python source or C4 fully-obfuscated source — because identifiers are never part of the feature encoding. This is why GNN Retention = C4_acc / C0_acc = 1.000 (Table 1, §3.2)."
+    }
+  },
+  "retention_table_1": {
+    "description": "Table 1 results explained by the two paths above",
+    "models": [
+      {
+        "name": "GraphCodeBERT (B2)",
+        "path": "Pretrained — uses reconstructed text (Step 2a)",
+        "C0": "96.59%",
+        "C4": "13.89%",
+        "retention": 0.144,
+        "collapse_reason": "Text input loses all signal at C4"
+      },
+      {
+        "name": "TF-IDF + LR (B3)",
+        "path": "Pretrained — uses reconstructed text (Step 2a)",
+        "C0": "93.62%",
+        "C4": "12.63%",
+        "retention": 0.135,
+        "collapse_reason": "Token bag loses all signal at C4"
+      },
+      {
+        "name": "GNN-only (B4)",
+        "path": "Structure-only — uses node one-hot + edges (Step 2b)",
+        "C0": "47.79%",
+        "C4": "47.79%",
+        "retention": 1.0,
+        "collapse_reason": "N/A — input is invariant across all conditions"
+      },
+      {
+        "name": "SymAlign-UAST (ours)",
+        "path": "Structure-only — uses node one-hot + edges (Step 2b)",
+        "C0": "31.91%",
+        "C4": "31.91%",
+        "retention": 1.0,
+        "collapse_reason": "N/A — input is invariant across all conditions"
+      }
+    ]
+  }
+}

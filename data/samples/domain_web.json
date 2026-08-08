@@ -1,0 +1,408 @@
+{
+  "_metadata": {
+    "source_file_id": "21301",
+    "domain": "Web",
+    "paper_reference": "§3.1 Dataset",
+    "description": "Representative sample: Web domain (HTTP/requests-based).",
+    "node_count": 15,
+    "edge_count": 14,
+    "node_type_distribution": {
+      "uast_root": 1,
+      "uast_comment": 3,
+      "uast_package": 3,
+      "uast_class": 1,
+      "uast_function": 4,
+      "uast_call": 3
+    },
+    "preprocessing_note": "This file shows the UAST graph topology as the GNN consumes it: node types + edges, with all identifiers masked to '<MASKED>'. This masked representation is invariant across obfuscation conditions C0-C4 — the GNN sees identical input regardless of whether source identifiers are present or replaced. See obfuscation_demo.json for the C0-C4 text progression side-by-side with this topology.",
+    "anonymization_note": "Identifiers in code_snippet fields are masked (<MASKED>) to match model input. Copyright/license comment nodes have been removed. Source code fields removed for anonymization."
+  },
+  "nodes": {
+    "0": {
+      "id": 0,
+      "code_snippet": "root",
+      "node_type": "uast_root",
+      "parents": [],
+      "children": [
+        2,
+        4,
+        8,
+        12,
+        13,
+        14,
+        15
+      ],
+      "metadata": {
+        "info": "links to all",
+        "language": "py"
+      },
+      "start_point": [
+        -1,
+        0
+      ],
+      "end_point": [
+        -1,
+        3
+      ]
+    },
+    "2": {
+      "id": 2,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "4": {
+      "id": 4,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "8": {
+      "id": 8,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "12": {
+      "id": 12,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "13": {
+      "id": 13,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "14": {
+      "id": 14,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "15": {
+      "id": 15,
+      "code_snippet": "uast_class <MASKED>",
+      "node_type": "uast_class",
+      "parents": [
+        0
+      ],
+      "children": [
+        16,
+        17,
+        19,
+        22
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "16": {
+      "id": 16,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        15
+      ],
+      "children": [],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "17": {
+      "id": 17,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        15
+      ],
+      "children": [
+        18
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "18": {
+      "id": 18,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        17
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "19": {
+      "id": 19,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        15
+      ],
+      "children": [
+        20
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "20": {
+      "id": 20,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        19
+      ],
+      "children": [
+        21
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "21": {
+      "id": 21,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        20
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "22": {
+      "id": 22,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        15
+      ],
+      "children": [],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    }
+  },
+  "edges": [
+    {
+      "start_id": 0,
+      "end_id": 2,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 4,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 8,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 12,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 13,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 14,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 15,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 16,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 17,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 17,
+      "end_id": 18,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 19,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 19,
+      "end_id": 20,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 20,
+      "end_id": 21,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 22,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    }
+  ]
+}

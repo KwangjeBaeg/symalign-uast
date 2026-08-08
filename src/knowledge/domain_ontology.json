@@ -1,0 +1,84 @@
+{
+  "description": "Domain ontology for SymAlign-UAST: defines domain-behavior expectations and mutual exclusion relationships. Generated via LLM reasoning over 14 concept domains.",
+
+  "domains": [
+    "Web Development",
+    "Data Processing",
+    "Machine Learning",
+    "Scientific Computing",
+    "Systems Programming",
+    "Database",
+    "Testing",
+    "Networking",
+    "Security",
+    "GUI",
+    "Game Development",
+    "Cloud Computing",
+    "DevOps",
+    "Quantum Computing"
+  ],
+
+  "behavioral_categories": [
+    "data_io",
+    "math_compute",
+    "network_comm",
+    "visualization",
+    "model_training",
+    "text_processing",
+    "system_ops"
+  ],
+
+  "domain_behavior_map": {
+    "_comment": "For each domain, which behavioral categories are expected (1) or not expected (0). Rows = domains, columns = [data_io, math_compute, network_comm, visualization, model_training, text_processing, system_ops]",
+    "Web Development":     [0, 0, 1, 0, 0, 1, 0],
+    "Data Processing":     [1, 1, 0, 1, 0, 1, 0],
+    "Machine Learning":    [1, 1, 0, 1, 1, 0, 0],
+    "Scientific Computing":[1, 1, 0, 1, 0, 0, 0],
+    "Systems Programming": [1, 0, 0, 0, 0, 0, 1],
+    "Database":            [1, 0, 0, 0, 0, 1, 0],
+    "Testing":             [0, 0, 0, 0, 0, 0, 1],
+    "Networking":          [0, 0, 1, 0, 0, 0, 1],
+    "Security":            [1, 0, 1, 0, 0, 1, 1],
+    "GUI":                 [0, 0, 0, 1, 0, 0, 0],
+    "Game Development":    [0, 1, 0, 1, 0, 0, 0],
+    "Cloud Computing":     [0, 0, 1, 0, 0, 0, 1],
+    "DevOps":              [0, 0, 1, 0, 0, 0, 1],
+    "Quantum Computing":   [0, 1, 0, 1, 1, 0, 0]
+  },
+
+  "exclusion_pairs": [
+    ["Quantum Computing", "Web Development"],
+    ["Quantum Computing", "Game Development"],
+    ["Quantum Computing", "GUI"],
+    ["Quantum Computing", "Database"],
+    ["Quantum Computing", "DevOps"],
+    ["Game Development", "Database"],
+    ["Game Development", "DevOps"],
+    ["Game Development", "Cloud Computing"],
+    ["GUI", "DevOps"],
+    ["GUI", "Networking"],
+    ["GUI", "Cloud Computing"],
+    ["Web Development", "Systems Programming"],
+    ["Web Development", "Scientific Computing"],
+    ["Web Development", "Quantum Computing"]
+  ],
+
+  "compatibility_groups": [
+    {
+      "name": "Scientific Stack",
+      "domains": ["Scientific Computing", "Machine Learning", "Data Processing", "Quantum Computing"]
+    },
+    {
+      "name": "Web Stack",
+      "domains": ["Web Development", "Networking", "Cloud Computing", "Database"]
+    },
+    {
+      "name": "Infrastructure Stack",
+      "domains": ["Systems Programming", "DevOps", "Security", "Networking"]
+    },
+    {
+      "name": "Visual Stack",
+      "domains": ["GUI", "Game Development", "Visualization"]
+    }
+  ]
+}

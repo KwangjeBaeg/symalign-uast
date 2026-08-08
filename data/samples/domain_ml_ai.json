@@ -1,0 +1,4645 @@
+{
+  "_metadata": {
+    "source_file_id": "10017",
+    "domain": "ML/AI",
+    "paper_reference": "§3.1 Dataset",
+    "description": "Representative sample: ML/AI domain (PyTorch/sklearn-based).",
+    "node_count": 179,
+    "edge_count": 178,
+    "node_type_distribution": {
+      "uast_root": 1,
+      "uast_package": 6,
+      "uast_function": 40,
+      "uast_call": 119,
+      "uast_comment": 11,
+      "uast_class": 2
+    },
+    "preprocessing_note": "This file shows the UAST graph topology as the GNN consumes it: node types + edges, with all identifiers masked to '<MASKED>'. This masked representation is invariant across obfuscation conditions C0-C4 — the GNN sees identical input regardless of whether source identifiers are present or replaced. See obfuscation_demo.json for the C0-C4 text progression side-by-side with this topology.",
+    "anonymization_note": "Identifiers in code_snippet fields are masked (<MASKED>) to match model input. Copyright/license comment nodes have been removed. Source code fields removed for anonymization."
+  },
+  "nodes": {
+    "0": {
+      "id": 0,
+      "code_snippet": "root",
+      "node_type": "uast_root",
+      "parents": [],
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        15,
+        23,
+        30,
+        87,
+        143,
+        149,
+        150,
+        151,
+        161,
+        162,
+        163,
+        164,
+        170,
+        171,
+        172,
+        173
+      ],
+      "metadata": {
+        "info": "links to all",
+        "language": "py"
+      },
+      "start_point": [
+        -1,
+        0
+      ],
+      "end_point": [
+        -1,
+        3
+      ]
+    },
+    "1": {
+      "id": 1,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "2": {
+      "id": 2,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "3": {
+      "id": 3,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "4": {
+      "id": 4,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "5": {
+      "id": 5,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "6": {
+      "id": 6,
+      "code_snippet": "uast_package <MASKED>",
+      "node_type": "uast_package",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "7": {
+      "id": 7,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        8,
+        9,
+        10,
+        12,
+        13
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "8": {
+      "id": 8,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        7
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "9": {
+      "id": 9,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        7
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "10": {
+      "id": 10,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        7
+      ],
+      "children": [
+        11
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "11": {
+      "id": 11,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        10
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "12": {
+      "id": 12,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        7
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "13": {
+      "id": 13,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        7
+      ],
+      "children": [
+        14
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "14": {
+      "id": 14,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        13
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "15": {
+      "id": 15,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        16,
+        17,
+        20
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "16": {
+      "id": 16,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        15
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "17": {
+      "id": 17,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        15
+      ],
+      "children": [
+        18
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "18": {
+      "id": 18,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        17
+      ],
+      "children": [
+        19
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "19": {
+      "id": 19,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        18
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "20": {
+      "id": 20,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        15
+      ],
+      "children": [
+        21
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "21": {
+      "id": 21,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        20
+      ],
+      "children": [
+        22
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "22": {
+      "id": 22,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        21
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "23": {
+      "id": 23,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "24": {
+      "id": 24,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "25": {
+      "id": 25,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "26": {
+      "id": 26,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "27": {
+      "id": 27,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "28": {
+      "id": 28,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "29": {
+      "id": 29,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        23
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "30": {
+      "id": 30,
+      "code_snippet": "uast_class <MASKED>",
+      "node_type": "uast_class",
+      "parents": [
+        0
+      ],
+      "children": [
+        31,
+        55,
+        57,
+        59,
+        61,
+        63,
+        65,
+        67,
+        69,
+        72,
+        74,
+        76,
+        79,
+        81,
+        83,
+        85
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "31": {
+      "id": 31,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        43,
+        44,
+        45,
+        46,
+        49,
+        50,
+        54
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "32": {
+      "id": 32,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "33": {
+      "id": 33,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "34": {
+      "id": 34,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "35": {
+      "id": 35,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "36": {
+      "id": 36,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "37": {
+      "id": 37,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "38": {
+      "id": 38,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "39": {
+      "id": 39,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "40": {
+      "id": 40,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [
+        41
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "41": {
+      "id": 41,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        40
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "42": {
+      "id": 42,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "43": {
+      "id": 43,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "44": {
+      "id": 44,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "45": {
+      "id": 45,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "46": {
+      "id": 46,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        31
+      ],
+      "children": [
+        47,
+        48
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "47": {
+      "id": 47,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        46
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "48": {
+      "id": 48,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        46
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "49": {
+      "id": 49,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "50": {
+      "id": 50,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [
+        51
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "51": {
+      "id": 51,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        50
+      ],
+      "children": [
+        52
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "52": {
+      "id": 52,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        51
+      ],
+      "children": [
+        53
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "53": {
+      "id": 53,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        52
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "54": {
+      "id": 54,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        31
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "55": {
+      "id": 55,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        56
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "56": {
+      "id": 56,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        55
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "57": {
+      "id": 57,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        58
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "58": {
+      "id": 58,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        57
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "59": {
+      "id": 59,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        60
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "60": {
+      "id": 60,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        59
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "61": {
+      "id": 61,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        62
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "62": {
+      "id": 62,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        61
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "63": {
+      "id": 63,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        64
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "64": {
+      "id": 64,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        63
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "65": {
+      "id": 65,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        66
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "66": {
+      "id": 66,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        65
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "67": {
+      "id": 67,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        68
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "68": {
+      "id": 68,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        67
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "69": {
+      "id": 69,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        70,
+        71
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "70": {
+      "id": 70,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        69
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "71": {
+      "id": 71,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        69
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "72": {
+      "id": 72,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        73
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "73": {
+      "id": 73,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        72
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "74": {
+      "id": 74,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        75
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "75": {
+      "id": 75,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        74
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "76": {
+      "id": 76,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        77,
+        78
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "77": {
+      "id": 77,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        76
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "78": {
+      "id": 78,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        76
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "79": {
+      "id": 79,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        80
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "80": {
+      "id": 80,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        79
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "81": {
+      "id": 81,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        82
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "82": {
+      "id": 82,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        81
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "83": {
+      "id": 83,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        84
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "84": {
+      "id": 84,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        83
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "85": {
+      "id": 85,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        30
+      ],
+      "children": [
+        86
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "86": {
+      "id": 86,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        85
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "87": {
+      "id": 87,
+      "code_snippet": "uast_class <MASKED>",
+      "node_type": "uast_class",
+      "parents": [
+        0
+      ],
+      "children": [
+        88,
+        114,
+        116,
+        118,
+        120,
+        122,
+        124,
+        126,
+        128,
+        130,
+        132,
+        134,
+        136,
+        138,
+        140
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "88": {
+      "id": 88,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        102,
+        103,
+        108,
+        109,
+        113
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "89": {
+      "id": 89,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "90": {
+      "id": 90,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "91": {
+      "id": 91,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "92": {
+      "id": 92,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "93": {
+      "id": 93,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "94": {
+      "id": 94,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "95": {
+      "id": 95,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "96": {
+      "id": 96,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "97": {
+      "id": 97,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [
+        98
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "98": {
+      "id": 98,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        97
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "99": {
+      "id": 99,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "100": {
+      "id": 100,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "101": {
+      "id": 101,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "102": {
+      "id": 102,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "103": {
+      "id": 103,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        88
+      ],
+      "children": [
+        104,
+        105,
+        107
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "104": {
+      "id": 104,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        103
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "105": {
+      "id": 105,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        103
+      ],
+      "children": [
+        106
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "106": {
+      "id": 106,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        105
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "107": {
+      "id": 107,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        103
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "108": {
+      "id": 108,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "109": {
+      "id": 109,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [
+        110
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "110": {
+      "id": 110,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        109
+      ],
+      "children": [
+        111
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "111": {
+      "id": 111,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        110
+      ],
+      "children": [
+        112
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "112": {
+      "id": 112,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        111
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "113": {
+      "id": 113,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        88
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "114": {
+      "id": 114,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        115
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "115": {
+      "id": 115,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        114
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "116": {
+      "id": 116,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        117
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "117": {
+      "id": 117,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        116
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "118": {
+      "id": 118,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        119
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "119": {
+      "id": 119,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        118
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "120": {
+      "id": 120,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        121
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "121": {
+      "id": 121,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        120
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "122": {
+      "id": 122,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        123
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "123": {
+      "id": 123,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        122
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "124": {
+      "id": 124,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        125
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "125": {
+      "id": 125,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        124
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "126": {
+      "id": 126,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        127
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "127": {
+      "id": 127,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        126
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "128": {
+      "id": 128,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        129
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "129": {
+      "id": 129,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        128
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "130": {
+      "id": 130,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        131
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "131": {
+      "id": 131,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        130
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "132": {
+      "id": 132,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        133
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "133": {
+      "id": 133,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        132
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "134": {
+      "id": 134,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        135
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "135": {
+      "id": 135,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        134
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "136": {
+      "id": 136,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        137
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "137": {
+      "id": 137,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        136
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "138": {
+      "id": 138,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        139
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "139": {
+      "id": 139,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        138
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "140": {
+      "id": 140,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        87
+      ],
+      "children": [
+        141,
+        142
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "141": {
+      "id": 141,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        140
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "142": {
+      "id": 142,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        140
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "143": {
+      "id": 143,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        144,
+        145,
+        147
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "144": {
+      "id": 144,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        143
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "145": {
+      "id": 145,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        143
+      ],
+      "children": [
+        146
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "146": {
+      "id": 146,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        145
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "147": {
+      "id": 147,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        143
+      ],
+      "children": [
+        148
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "148": {
+      "id": 148,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        147
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "149": {
+      "id": 149,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "150": {
+      "id": 150,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "151": {
+      "id": 151,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        152,
+        153,
+        155,
+        157,
+        159
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "152": {
+      "id": 152,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        151
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "153": {
+      "id": 153,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        151
+      ],
+      "children": [
+        154
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "154": {
+      "id": 154,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        153
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "155": {
+      "id": 155,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        151
+      ],
+      "children": [
+        156
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "156": {
+      "id": 156,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        155
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "157": {
+      "id": 157,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        151
+      ],
+      "children": [
+        158
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "158": {
+      "id": 158,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        157
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "159": {
+      "id": 159,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        151
+      ],
+      "children": [
+        160
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "160": {
+      "id": 160,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        159
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "161": {
+      "id": 161,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "162": {
+      "id": 162,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "163": {
+      "id": 163,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "164": {
+      "id": 164,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        165,
+        166,
+        168
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "165": {
+      "id": 165,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        164
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "166": {
+      "id": 166,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        164
+      ],
+      "children": [
+        167
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "167": {
+      "id": 167,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        166
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "168": {
+      "id": 168,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        164
+      ],
+      "children": [
+        169
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "169": {
+      "id": 169,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        168
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "170": {
+      "id": 170,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "171": {
+      "id": 171,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "172": {
+      "id": 172,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        0
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "173": {
+      "id": 173,
+      "code_snippet": "uast_function <MASKED>",
+      "node_type": "uast_function",
+      "parents": [
+        0
+      ],
+      "children": [
+        174,
+        175,
+        177
+      ],
+      "metadata": {
+        "user_defined": true
+      },
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "174": {
+      "id": 174,
+      "code_snippet": "uast_comment <MASKED>",
+      "node_type": "uast_comment",
+      "parents": [
+        173
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "175": {
+      "id": 175,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        173
+      ],
+      "children": [
+        176
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "176": {
+      "id": 176,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        175
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "177": {
+      "id": 177,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        173
+      ],
+      "children": [
+        178
+      ],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    },
+    "178": {
+      "id": 178,
+      "code_snippet": "uast_call <MASKED>",
+      "node_type": "uast_call",
+      "parents": [
+        177
+      ],
+      "children": [],
+      "metadata": {},
+      "start_point": [
+        null,
+        null
+      ],
+      "end_point": [
+        null,
+        null
+      ]
+    }
+  },
+  "edges": [
+    {
+      "start_id": 0,
+      "end_id": 1,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 2,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 3,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 4,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 5,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 6,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 7,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 7,
+      "end_id": 8,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 7,
+      "end_id": 9,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 7,
+      "end_id": 10,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 10,
+      "end_id": 11,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 7,
+      "end_id": 12,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 7,
+      "end_id": 13,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 13,
+      "end_id": 14,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 15,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 16,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 17,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 17,
+      "end_id": 18,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 18,
+      "end_id": 19,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 15,
+      "end_id": 20,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 20,
+      "end_id": 21,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 21,
+      "end_id": 22,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 23,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 24,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 25,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 26,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 27,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 28,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 23,
+      "end_id": 29,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 30,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 31,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 32,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 33,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 34,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 35,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 36,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 37,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 38,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 39,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 40,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 40,
+      "end_id": 41,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 42,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 43,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 44,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 45,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 46,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 46,
+      "end_id": 47,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 46,
+      "end_id": 48,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 49,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 50,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 50,
+      "end_id": 51,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 51,
+      "end_id": 52,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 52,
+      "end_id": 53,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 31,
+      "end_id": 54,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 55,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 55,
+      "end_id": 56,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 57,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 57,
+      "end_id": 58,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 59,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 59,
+      "end_id": 60,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 61,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 61,
+      "end_id": 62,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 63,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 63,
+      "end_id": 64,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 65,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 65,
+      "end_id": 66,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 67,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 67,
+      "end_id": 68,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 69,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 69,
+      "end_id": 70,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 69,
+      "end_id": 71,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 72,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 72,
+      "end_id": 73,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 74,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 74,
+      "end_id": 75,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 76,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 76,
+      "end_id": 77,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 76,
+      "end_id": 78,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 79,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 79,
+      "end_id": 80,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 81,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 81,
+      "end_id": 82,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 83,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 83,
+      "end_id": 84,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 30,
+      "end_id": 85,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 85,
+      "end_id": 86,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 87,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 88,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 89,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 90,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 91,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 92,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 93,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 94,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 95,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 96,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 97,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 97,
+      "end_id": 98,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 99,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 100,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 101,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 102,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 103,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 103,
+      "end_id": 104,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 103,
+      "end_id": 105,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 105,
+      "end_id": 106,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 103,
+      "end_id": 107,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 108,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 109,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 109,
+      "end_id": 110,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 110,
+      "end_id": 111,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 111,
+      "end_id": 112,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 88,
+      "end_id": 113,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 114,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 114,
+      "end_id": 115,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 116,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 116,
+      "end_id": 117,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 118,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 118,
+      "end_id": 119,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 120,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 120,
+      "end_id": 121,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 122,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 122,
+      "end_id": 123,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 124,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 124,
+      "end_id": 125,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 126,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 126,
+      "end_id": 127,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 128,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 128,
+      "end_id": 129,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 130,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 130,
+      "end_id": 131,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 132,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 132,
+      "end_id": 133,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 134,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 134,
+      "end_id": 135,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 136,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 136,
+      "end_id": 137,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 138,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 138,
+      "end_id": 139,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 87,
+      "end_id": 140,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 140,
+      "end_id": 141,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 140,
+      "end_id": 142,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 143,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 143,
+      "end_id": 144,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 143,
+      "end_id": 145,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 145,
+      "end_id": 146,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 143,
+      "end_id": 147,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 147,
+      "end_id": 148,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 149,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 150,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 151,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 151,
+      "end_id": 152,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 151,
+      "end_id": 153,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 153,
+      "end_id": 154,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 151,
+      "end_id": 155,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 155,
+      "end_id": 156,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 151,
+      "end_id": 157,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 157,
+      "end_id": 158,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 151,
+      "end_id": 159,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 159,
+      "end_id": 160,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 161,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 162,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 163,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 164,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 164,
+      "end_id": 165,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 164,
+      "end_id": 166,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 166,
+      "end_id": 167,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 164,
+      "end_id": 168,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 168,
+      "end_id": 169,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 170,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 171,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 172,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 0,
+      "end_id": 173,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 173,
+      "end_id": 174,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 173,
+      "end_id": 175,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 175,
+      "end_id": 176,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 173,
+      "end_id": 177,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    },
+    {
+      "start_id": 177,
+      "end_id": 178,
+      "directed_relation": "parent_node",
+      "metadata": {}
+    }
+  ]
+}

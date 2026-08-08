@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & model artifacts (too large for repo)
+data/uast_files/
+data/*.pkl
+data/*.pt
+data/*.bin
+*.pkl
+*.pt
+*.bin
+*.h5
+
+# Results & checkpoints
+results/
+checkpoints/
+*.ckpt
+*.safetensors
+
+# Environment variables / secrets
+.env
+*.env
+secrets.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+logs/
