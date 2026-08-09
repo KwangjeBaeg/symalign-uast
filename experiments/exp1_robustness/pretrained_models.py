@@ -8,9 +8,21 @@ Both use full fine-tuning with a classification head.
 Input: code-like text (reconstructed from UAST data).
 """
 
+from typing import Any
+
 import torch
 import torch.nn as nn
-from transformers import AutoTokenizer, AutoModel
+
+
+def _transformers() -> tuple[Any, Any]:
+    """Load optional pretrained-model dependencies only for B1/B2 runs."""
+    try:
+        from transformers import AutoModel, AutoTokenizer
+    except ModuleNotFoundError as error:
+        raise RuntimeError(
+            "B1/B2 require the optional research dependencies in requirements.txt."
+        ) from error
+    return AutoModel, AutoTokenizer
 
 
 class PretrainedCodeClassifier(nn.Module):
@@ -24,7 +36,8 @@ class PretrainedCodeClassifier(nn.Module):
     def __init__(self, model_name: str, num_classes: int, dropout: float = 0.1,
                  freeze_encoder: bool = False):
         super().__init__()
-        self.encoder = AutoModel.from_pretrained(model_name)
+        auto_model, _ = _transformers()
+        self.encoder = auto_model.from_pretrained(model_name)
         hidden_size = self.encoder.config.hidden_size  # 768
 
         if freeze_encoder:
@@ -76,7 +89,8 @@ def build_pretrained_model(variant: str, num_classes: int,
     )
 
 
-def build_tokenizer(variant: str) -> AutoTokenizer:
+def build_tokenizer(variant: str) -> Any:
     if variant not in MODEL_REGISTRY:
         raise ValueError(f"Unknown variant {variant}. Use B1 or B2.")
-    return AutoTokenizer.from_pretrained(MODEL_REGISTRY[variant])
+    _, auto_tokenizer = _transformers()
+    return auto_tokenizer.from_pretrained(MODEL_REGISTRY[variant])

@@ -1,11 +1,9 @@
 """
 SymAlign-UAST Experiment Runner.
 
-Mirrors run_hyperbolic_experiment() from experiments/hyperbolic/hyperbolic_alignment.py
-with added symbolic evidence extraction and neuro-symbolic logic losses.
-
-Usage (via Modal):
-    modal run modal_symalign.py
+Trains the full GNN + hyperbolic contrastive alignment + symbolic-logic
+classifier (E1-E4 geometry variants, S0-S6 symbolic variants) described
+in the paper's Method and Experiments sections.
 """
 
 import json
@@ -25,17 +23,17 @@ from sklearn.metrics import accuracy_score
 
 from torch_geometric.data import DataLoader
 
-from experiments.hyperbolic.poincare_ops import hyp_distance_batch
-from experiments.hyperbolic.hyperbolic_alignment import (
+from src.models.poincare_ops import hyp_distance_batch
+from src.models.hyperbolic_aligner import (
     HyperbolicContrastiveAligner,
 )
-from experiments.symalign.symbolic_evidence import (
+from src.data.symbolic_evidence import (
     SymbolicEvidenceExtractor,
     EVIDENCE_DIM,
 )
-from experiments.symalign.domain_ontology import DomainOntology
-from experiments.symalign.neurosymbolic_loss import NeuroSymbolicLoss
-from experiments.symalign.symalign_classifier import SymAlignClassifier
+from src.knowledge.domain_ontology import DomainOntology
+from src.losses.neurosymbolic_loss import NeuroSymbolicLoss
+from src.models.symalign_classifier import SymAlignClassifier
 
 
 def evaluate_zero_shot_symalign(
@@ -158,12 +156,12 @@ def run_symalign_experiment(
     # Step 1: Load Phase 2 Artifacts
     # =========================================================================
     print("\n--- Step 1: Loading Phase 2 Artifacts ---")
-    from experiments.phase2.gnn_encoder import UASTGraphEncoder, UASTClassifier
-    from experiments.phase2.subtree_extractor import (
+    from src.models.gnn_encoder import UASTGraphEncoder, UASTClassifier
+    from src.data.subtree_extractor import (
         UASTSubtreeExtractor,
         UAST_NODE_TYPES,
     )
-    from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
+    from experiments.train_gnn import prepare_labels, graphs_to_pyg
 
     with open(phase2_label_encoder_path, "rb") as f:
         label_encoder = pickle.load(f)
@@ -187,7 +185,7 @@ def run_symalign_experiment(
     # Step 2: Generate Semantic Embeddings
     # =========================================================================
     print("\n--- Step 2: Generating Semantic Embeddings ---")
-    from experiments.phase3.semantic_embedder import LibrarySemanticEmbedder
+    from src.data.semantic_embedder import LibrarySemanticEmbedder
 
     embedder = LibrarySemanticEmbedder(device=device)
     lib_embeddings = embedder.embed_libraries(library_concepts)
@@ -300,12 +298,9 @@ def run_symalign_experiment(
     # =========================================================================
     print("\n--- Step 4: Building SymAlign Model ---")
 
-    # Load domain ontology
-    if ontology_path is None:
-        ontology_path = os.path.join(
-            os.path.dirname(__file__), "domain_ontology.json"
-        )
-    ontology = DomainOntology(ontology_path)
+    # Load domain ontology (defaults to the bundled sample ontology; pass
+    # ontology_path explicitly to point at a full research ontology)
+    ontology = DomainOntology(ontology_path) if ontology_path else DomainOntology()
     ontology.print_summary(label_encoder)
 
     domain_behavior_map = ontology.get_domain_behavior_map(label_encoder)

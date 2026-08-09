@@ -193,9 +193,9 @@ def run_phase3_experiment(
 
     # Step 1: Load Phase 2 artifacts
     print("\n--- Step 1: Loading Phase 2 Artifacts ---")
-    from experiments.phase2.gnn_encoder import UASTGraphEncoder, UASTClassifier
-    from experiments.phase2.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
-    from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
+    from src.models.gnn_encoder import UASTGraphEncoder, UASTClassifier
+    from src.data.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
+    from experiments.train_gnn import prepare_labels, graphs_to_pyg
 
     with open(phase2_label_encoder_path, "rb") as f:
         label_encoder = pickle.load(f)
@@ -215,7 +215,7 @@ def run_phase3_experiment(
 
     # Step 2: Generate semantic embeddings
     print("\n--- Step 2: Generating Semantic Embeddings ---")
-    from experiments.phase3.semantic_embedder import LibrarySemanticEmbedder
+    from src.data.semantic_embedder import LibrarySemanticEmbedder
 
     embedder = LibrarySemanticEmbedder(device=device)
     lib_embeddings = embedder.embed_libraries(library_concepts)

@@ -213,9 +213,9 @@ def run_robustness_experiment(
 
     if phase2_model_path and os.path.exists(phase2_model_path):
         import torch
-        from experiments.phase2.gnn_encoder import UASTClassifier
-        from experiments.phase2.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
-        from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
+        from src.models.gnn_encoder import UASTClassifier
+        from src.data.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
+        from experiments.train_gnn import prepare_labels, graphs_to_pyg
         from torch_geometric.data import DataLoader
         import torch.nn.functional as F
 

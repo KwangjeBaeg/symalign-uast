@@ -26,8 +26,8 @@ from tqdm import tqdm
 # PyTorch Geometric imports
 from torch_geometric.data import Data, DataLoader
 
-from experiments.phase2.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
-from experiments.phase2.gnn_encoder import UASTClassifier
+from src.data.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
+from src.models.gnn_encoder import UASTClassifier
 
 
 def prepare_labels(dataset: list, library_to_concept: dict) -> list:

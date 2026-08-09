@@ -1,5 +1,6 @@
 {
   "description": "Domain ontology for SymAlign-UAST: defines domain-behavior expectations and mutual exclusion relationships. Generated via LLM reasoning over 14 concept domains.",
+  "_comment": "Illustrative sample ontology bundled for exercising the pipeline end-to-end (see scripts/run_sample_pipeline.py). As noted in the README, this release ships representative samples rather than the full training corpus, so values here are for concept and pipeline testing, not a reconstruction of the paper's reported tables.",
 
   "domains": [
     "Web Development",

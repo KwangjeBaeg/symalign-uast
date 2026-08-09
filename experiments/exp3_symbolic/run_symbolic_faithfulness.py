@@ -6,7 +6,7 @@ reliability, and performance. Each variant trains a SymAlign model with
 different symbolic loss/ontology configurations.
 
 Usage:
-    from experiments.symbolic_faithfulness.run_symbolic_faithfulness import (
+    from experiments.exp3_symbolic.run_symbolic_faithfulness import (
         run_symbolic_faithfulness_experiment,
     )
     result = run_symbolic_faithfulness_experiment(variant="S1", seed=42, ...)
@@ -29,20 +29,20 @@ from sklearn.metrics import accuracy_score
 
 from torch_geometric.data import DataLoader
 
-from experiments.hyperbolic.poincare_ops import hyp_distance_batch
-from experiments.hyperbolic.hyperbolic_alignment import (
+from src.models.poincare_ops import hyp_distance_batch
+from src.models.hyperbolic_aligner import (
     HyperbolicContrastiveAligner,
 )
-from experiments.symalign.symbolic_evidence import (
+from src.data.symbolic_evidence import (
     SymbolicEvidenceExtractor,
     EVIDENCE_DIM,
 )
-from experiments.symalign.domain_ontology import DomainOntology
-from experiments.symalign.symalign_classifier import SymAlignClassifier
-from experiments.symbolic_faithfulness.symbolic_losses import get_symbolic_loss
-from experiments.symbolic_faithfulness.ontology_corruption import get_corrupted_ontology
-from experiments.symbolic_faithfulness.hard_posthoc import apply_hard_posthoc
-from experiments.symbolic_faithfulness.evaluation_metrics import evaluate_all
+from src.knowledge.domain_ontology import DomainOntology
+from src.models.symalign_classifier import SymAlignClassifier
+from src.losses.symbolic_losses import get_symbolic_loss
+from .ontology_corruption import get_corrupted_ontology
+from .hard_posthoc import apply_hard_posthoc
+from src.evaluation.evaluation_metrics import evaluate_all
 
 
 def _set_seed(seed: int):
@@ -119,12 +119,12 @@ def run_symbolic_faithfulness_experiment(
     # Step 1: Load Phase 2 Artifacts (GNN encoder)
     # =========================================================================
     print("\n--- Step 1: Loading Phase 2 Artifacts ---")
-    from experiments.phase2.gnn_encoder import UASTGraphEncoder, UASTClassifier
-    from experiments.phase2.subtree_extractor import (
+    from src.models.gnn_encoder import UASTGraphEncoder, UASTClassifier
+    from src.data.subtree_extractor import (
         UASTSubtreeExtractor,
         UAST_NODE_TYPES,
     )
-    from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
+    from experiments.train_gnn import prepare_labels, graphs_to_pyg
 
     with open(phase2_label_encoder_path, "rb") as f:
         label_encoder = pickle.load(f)
@@ -148,7 +148,7 @@ def run_symbolic_faithfulness_experiment(
     # Step 2: Generate Semantic Embeddings
     # =========================================================================
     print("\n--- Step 2: Generating Semantic Embeddings ---")
-    from experiments.phase3.semantic_embedder import LibrarySemanticEmbedder
+    from src.data.semantic_embedder import LibrarySemanticEmbedder
 
     embedder = LibrarySemanticEmbedder(device=device)
     lib_embeddings = embedder.embed_libraries(library_concepts)
@@ -245,12 +245,7 @@ def run_symbolic_faithfulness_experiment(
     print(f"\n--- Step 4: Building Model (variant={variant}) ---")
 
     # Load original ontology
-    if ontology_path is None:
-        ontology_path = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
-            "symalign", "domain_ontology.json",
-        )
-    ontology = DomainOntology(ontology_path)
+    ontology = DomainOntology(ontology_path) if ontology_path else DomainOntology()
     orig_behavior_map = ontology.get_domain_behavior_map(label_encoder)
     orig_exclusion_matrix = ontology.get_exclusion_matrix(label_encoder)
 

@@ -39,7 +39,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from torch.utils.data import DataLoader, TensorDataset
 
-from experiments.pretrained_baseline.obfuscation import (
+from src.data.obfuscation import (
     build_code_texts, apply_obfuscation,
     _collect_library_tokens, _collect_identifier_tokens,
 )
@@ -141,9 +141,9 @@ def eval_gnn(phase2_model_path: str, phase2_label_encoder_path: str,
     Evaluate the existing GNN model. Structure-only → invariant to obfuscation.
     Returns the same metrics for all conditions.
     """
-    from experiments.phase2.gnn_encoder import UASTClassifier
-    from experiments.phase2.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
-    from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
+    from src.models.gnn_encoder import UASTClassifier
+    from src.data.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
+    from experiments.train_gnn import prepare_labels, graphs_to_pyg
     from torch_geometric.data import DataLoader as PyGLoader
 
     with open(phase2_label_encoder_path, "rb") as f:
@@ -218,7 +218,7 @@ def eval_symalign(phase2_model_path: str, phase2_label_encoder_path: str,
     Structure-based → invariant to obfuscation → same result for all conditions.
     Uses E3_HybridHyperbolic from geometry ablation for consistency.
     """
-    from experiments.geometry_ablation.geometry_experiment import run_geometry_experiment
+    from experiments.exp2_geometry.geometry_experiment import run_geometry_experiment
 
     results_dir = "/tmp/symalign_b5"
     os.makedirs(results_dir, exist_ok=True)
@@ -275,7 +275,7 @@ def train_eval_pretrained(variant: str, train_texts: List[str],
 
     Budget fairness: same max epochs, same patience, same lr for B1 and B2.
     """
-    from experiments.pretrained_baseline.pretrained_models import (
+    from experiments.exp1_robustness.pretrained_models import (
         build_pretrained_model, build_tokenizer,
     )
 

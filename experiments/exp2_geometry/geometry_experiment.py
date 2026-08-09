@@ -29,14 +29,14 @@ from sklearn.metrics import accuracy_score
 
 from torch_geometric.data import Data, DataLoader
 
-from experiments.phase2.gnn_encoder import UASTGraphEncoder, UASTClassifier
-from experiments.phase2.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
-from experiments.phase2.train_gnn import prepare_labels, graphs_to_pyg
-from experiments.phase3.semantic_embedder import LibrarySemanticEmbedder
-from experiments.hyperbolic.poincare_ops import (
+from src.models.gnn_encoder import UASTGraphEncoder, UASTClassifier
+from src.data.subtree_extractor import UASTSubtreeExtractor, UAST_NODE_TYPES
+from experiments.train_gnn import prepare_labels, graphs_to_pyg
+from src.data.semantic_embedder import LibrarySemanticEmbedder
+from src.models.poincare_ops import (
     expmap0, logmap0, project, hyp_distance_batch,
 )
-from experiments.geometry_ablation.unified_evaluator import (
+from src.evaluation.unified_evaluator import (
     compute_indist_metrics,
     compute_zeroshot_metrics,
     compute_knn_accuracy,
@@ -423,7 +423,7 @@ def _compute_val_zs_top1(
     """
     import torch
     import torch.nn.functional as F
-    from experiments.hyperbolic.poincare_ops import expmap0, project, hyp_distance_batch
+    from src.models.poincare_ops import expmap0, project, hyp_distance_batch
 
     model.eval()
     val_aligned, val_lbls_list = [], []

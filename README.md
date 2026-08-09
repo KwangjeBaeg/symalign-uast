@@ -22,6 +22,7 @@ poetry python install 3.12
 poetry env use 3.12
 poetry install
 poetry run python scripts/run_sample_pipeline.py --output results/sample_pipeline_summary.json
+poetry run python scripts/run_experiment_smoke_tests.py --output results/experiment_smoke_summary.json
 ```
 
 This CPU smoke test loads every bundled identifier-stripped UAST, one-hot
@@ -29,6 +30,11 @@ encodes its node types, executes the GAT encoder, projects the graph embedding
 to the Poincare ball, and computes the symbolic logic loss. It writes a JSON
 summary with tensor shapes, losses, and Poincare-ball norms. Deterministic
 initialization (`torch.manual_seed(42)`) makes the demonstration repeatable.
+
+`run_experiment_smoke_tests.py` also checks the public Experiment 1--3 code
+paths without the full corpus: C0--C4 text transforms, E1--E4 model forwards,
+and S0/S1/S2/S4 symbolic controls plus S3 post-hoc correction. It validates
+implementation wiring, not the paper's reported metrics.
 
 ## Repository Structure
 
@@ -47,7 +53,8 @@ symalign_uast/
 ├── baselines/           # TF-IDF+LR, GNN-only, pretrained model baselines
 ├── data/samples/        # 14 representative UAST graphs spanning 11 domains
 ├── pyproject.toml        # Poetry environment for the public demo
-└── requirements.txt         # Full research environment dependencies
+├── requirements.txt      # Legacy research dependencies
+└── scripts/              # Sample pipeline and experiment smoke tests
 ```
 
 ## Data and Reproducibility
@@ -62,6 +69,10 @@ implementation check, not a rerun of the paper's training protocol or a
 reconstruction of reported metrics and tables. The experiment directories
 preserve the implementations for the paper's evaluation settings, but their
 full runs require the non-distributed corpus and experiment artifacts.
+
+The bundled symbolic knowledge base (`src/knowledge/domain_ontology.json`) is
+likewise a small illustrative sample for exercising the pipeline end-to-end,
+not the full ontology used to produce the paper's reported tables.
 
 ## Experiments in the paper
 
