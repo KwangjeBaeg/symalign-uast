@@ -10,7 +10,9 @@ Can code structure still reveal a program's domain when its identifiers are miss
 
 ## Overview
 
-<a href="assets/framework.svg"><img src="assets/framework.svg" alt="SymAlign-UAST: structural graph encoding, hyperbolic domain retrieval, and training-time symbolic guidance" width="100%"></a>
+<a href="assets/figures/framework_from_poster.png"><img src="assets/figures/framework_from_poster.png" alt="Original poster figure showing the SymAlign-UAST framework" width="100%"></a>
+
+Original framework figure from the [conference poster](assets/poster.pdf).
 
 - **Structure:** encode node types and graph topology with a Graph Attention Network; identifier strings never enter the GAT.
 - **Geometry:** align code and domain descriptions in the Poincaré ball for prototype retrieval.
