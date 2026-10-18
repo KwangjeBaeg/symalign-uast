@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="490" viewBox="0 0 1100 490" role="img" aria-labelledby="title desc">
+  <title id="title">SymAlign-UAST framework</title>
+  <desc id="desc">Identifier-stripped node types and graph topology enter the GAT. A classifier predicts seen domains. A Poincare projection and text-derived domain prototypes support hyperbolic retrieval. Separately extracted symbolic evidence supplies training-time regularization.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#65758b"/></marker>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif;fill:#21334b} .title{font-size:22px;font-weight:700}
+      .head{font-size:16px;font-weight:700}.body{font-size:13px}.note{font-size:12px;fill:#53657b}
+      .box{stroke-width:1.4;rx:12}.line{fill:none;stroke:#65758b;stroke-width:1.8;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1100" height="490" rx="16" fill="#f8fafc"/>
+  <text x="28" y="37" class="title">Structure → geometry → domain prediction</text>
+  <text x="28" y="60" class="note">Graph encoding, prototype retrieval, and training-time symbolic guidance</text>
+
+  <rect x="28" y="95" width="166" height="76" class="box" fill="#fff" stroke="#bec9d6"/>
+  <text x="111" y="125" text-anchor="middle" class="head">UAST JSON</text>
+  <text x="111" y="149" text-anchor="middle" class="body">Parsed code structure</text>
+  <path d="M194 133 H227" class="line"/>
+
+  <rect x="232" y="95" width="178" height="76" class="box" fill="#e9f2fc" stroke="#8bafd1"/>
+  <text x="321" y="123" text-anchor="middle" class="head">Strip identifiers</text>
+  <text x="321" y="148" text-anchor="middle" class="body">Node types + topology</text>
+  <path d="M410 133 H443" class="line"/>
+
+  <rect x="448" y="95" width="174" height="76" class="box" fill="#e9f2fc" stroke="#8bafd1"/>
+  <text x="535" y="123" text-anchor="middle" class="head">GAT encoder</text>
+  <text x="535" y="148" text-anchor="middle" class="body">Structural embedding</text>
+  <path d="M622 133 H655" class="line"/>
+
+  <rect x="660" y="95" width="174" height="76" class="box" fill="#fff" stroke="#bec9d6"/>
+  <text x="747" y="123" text-anchor="middle" class="head">CE classifier</text>
+  <text x="747" y="148" text-anchor="middle" class="body">Supervised domain head</text>
+  <path d="M834 133 H867" class="line"/>
+  <rect x="872" y="95" width="198" height="76" class="box" fill="#edf6ef" stroke="#91b89c"/>
+  <text x="971" y="123" text-anchor="middle" class="head">Seen-domain prediction</text>
+  <text x="971" y="148" text-anchor="middle" class="body">Classification probabilities</text>
+
+  <path d="M535 171 V239" class="line"/>
+  <rect x="448" y="244" width="174" height="76" class="box" fill="#fff3df" stroke="#d1b078"/>
+  <text x="535" y="273" text-anchor="middle" class="head">Poincaré projection</text>
+  <text x="535" y="297" text-anchor="middle" class="body">Hyperbolic code embedding</text>
+  <path d="M622 282 H655" class="line"/>
+
+  <rect x="660" y="244" width="174" height="76" class="box" fill="#fff3df" stroke="#d1b078"/>
+  <text x="747" y="273" text-anchor="middle" class="head">Nearest prototype</text>
+  <text x="747" y="297" text-anchor="middle" class="body">Hyperbolic distance</text>
+  <path d="M834 282 H867" class="line"/>
+  <rect x="872" y="244" width="198" height="76" class="box" fill="#edf6ef" stroke="#91b89c"/>
+  <text x="971" y="273" text-anchor="middle" class="head">Prototype retrieval</text>
+  <text x="971" y="297" text-anchor="middle" class="body">Seen and unseen domains</text>
+
+  <rect x="232" y="367" width="178" height="76" class="box" fill="#fff" stroke="#bec9d6"/>
+  <text x="321" y="391" text-anchor="middle" class="head">Domain descriptions</text>
+  <text x="321" y="413" text-anchor="middle" class="body">Frozen text encoder</text>
+  <text x="321" y="431" text-anchor="middle" class="body">+ learned projector</text>
+  <path d="M410 405 H443" class="line"/>
+  <rect x="448" y="367" width="174" height="76" class="box" fill="#fff3df" stroke="#d1b078"/>
+  <text x="535" y="397" text-anchor="middle" class="head">Domain prototypes</text>
+  <text x="535" y="420" text-anchor="middle" class="body">Shared retrieval space</text>
+  <path d="M622 405 H747 V325" class="line"/>
+
+  <path d="M111 171 V239" class="line"/>
+  <rect x="28" y="244" width="166" height="144" class="box" fill="#f0ebf9" stroke="#b2a2cc"/>
+  <text x="111" y="272" text-anchor="middle" class="head">Symbolic evidence</text>
+  <text x="111" y="295" text-anchor="middle" class="body">Structure and behavior</text>
+  <path d="M60 313 H162" stroke="#c5b9d8"/>
+  <text x="111" y="338" text-anchor="middle" class="head">Soft logic losses</text>
+  <text x="111" y="361" text-anchor="middle" class="body">Training-time guidance</text>
+  <path d="M194 261 H210 V206 H747 V177" class="line" stroke-dasharray="6 5"/>
+  <text x="270" y="199" class="note">Differentiable regularization</text>
+  <text x="28" y="473" class="note">Identifier strings never enter the GAT. Symbolic evidence is extracted separately from the original UAST.</text>
+</svg>

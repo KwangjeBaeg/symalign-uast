@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use SymAlign-UAST, please cite the accompanying NeSy 2026 paper."
+title: "SymAlign-UAST: Neuro-Symbolic Code Understanding via Hyperbolic Geometry and Structural Invariance"
+type: software
+authors:
+  - family-names: Baeg
+    given-names: Kwangje
+  - family-names: Kim
+    given-names: Hoyeob
+  - family-names: Villacis
+    given-names: Janaina
+repository-code: "https://github.com/KwangjeBaeg/symalign-uast"
+license: Apache-2.0
+preferred-citation:
+  type: conference-paper
+  title: "SymAlign-UAST: Neuro-Symbolic Code Understanding via Hyperbolic Geometry and Structural Invariance"
+  authors:
+    - family-names: Baeg
+      given-names: Kwangje
+    - family-names: Kim
+      given-names: Hoyeob
+    - family-names: Villacis
+      given-names: Janaina
+  year: 2026
+  url: "https://github.com/KwangjeBaeg/symalign-uast/blob/main/assets/paper.pdf"

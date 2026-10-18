@@ -1,101 +1,93 @@
-# SymAlign-UAST
+# [NeSy 2026] SymAlign-UAST
 
-Research code for **"SymAlign-UAST: Neuro-Symbolic Code Understanding via Hyperbolic Geometry and Structural Invariance."**
+Official code for **SymAlign-UAST: Neuro-Symbolic Code Understanding via Hyperbolic Geometry and Structural Invariance**
+
+Kwangje Baeg, Hoyeob Kim, and Janaina Villacis
+
+[Paper](assets/paper.pdf) · [Poster](assets/poster.pdf) · [Quick start](#quick-start) · [Experiments](#experiments) · [Citation](#citation)
+
+Can code structure still reveal a program's domain when its identifiers are missing or unreliable? SymAlign-UAST combines **identifier-stripped UAST graphs**, **hyperbolic prototype alignment**, and **differentiable symbolic regularization** to study this question.
 
 ## Overview
 
-SymAlign-UAST is a neuro-symbolic framework for robust code domain classification that operates on identifier-stripped Universal Abstract Syntax Trees (UASTs). It combines:
+<a href="assets/framework.svg"><img src="assets/framework.svg" alt="SymAlign-UAST: structural graph encoding, hyperbolic domain retrieval, and training-time symbolic guidance" width="100%"></a>
 
-- **GAT encoder** on UAST graph topology (identifier-invariant structural encoding)
-- **Hyperbolic contrastive alignment** in the Poincaré ball for hierarchy-aware domain representations
-- **Differentiable symbolic regularization** via fuzzy logic constraints
+- **Structure:** encode node types and graph topology with a Graph Attention Network; identifier strings never enter the GAT.
+- **Geometry:** align code and domain descriptions in the Poincaré ball for prototype retrieval.
+- **Logic:** use structural and behavioral evidence to regularize domain predictions during training.
 
-## Run the bundled sample pipeline
+Hyperbolic alignment improves hierarchical organization in the reported comparison; its raw zero-shot retrieval gains are modest. The symbolic controls separate soft regularization from hard post-hoc correction.
 
-The public package supports Python 3.10--3.12. Poetry creates and manages the
-isolated environment for the bundled demonstration. If the machine has no
-compatible Python interpreter, Poetry can install and select Python 3.12 first:
+## Quick start
 
-```bash
-# Only needed when Python 3.10--3.12 is unavailable locally.
-poetry python install 3.12
-poetry env use 3.12
-poetry install
-poetry run python scripts/run_sample_pipeline.py --output results/sample_pipeline_summary.json
-poetry run python scripts/run_experiment_smoke_tests.py --output results/experiment_smoke_summary.json
+Clone the repository and recompute the experiment summaries with Python 3.10+:
+
+```sh
+git clone https://github.com/KwangjeBaeg/symalign-uast.git
+cd symalign-uast
+python run.py reproduce --output outputs/reproduced
 ```
 
-This CPU smoke test loads every bundled identifier-stripped UAST, one-hot
-encodes its node types, executes the GAT encoder, projects the graph embedding
-to the Poincare ball, and computes the symbolic logic loss. It writes a JSON
-summary with tensor shapes, losses, and Poincare-ball norms. Deterministic
-initialization (`torch.manual_seed(42)`) makes the demonstration repeatable.
+This command uses only Python's standard library. It verifies the bundled result files, recomputes means and standard deviations, and writes `tables.md` and `reproduction.json`. It aggregates saved experiment records; it does not retrain models or re-evaluate raw predictions. [Coverage and provenance](docs/reproduction.md).
 
-`run_experiment_smoke_tests.py` also checks the public Experiment 1--3 code
-paths without the full corpus: C0--C4 text transforms, E1--E4 model forwards,
-and S0/S1/S2/S4 symbolic controls plus S3 post-hoc correction. It validates
-implementation wiring, not the paper's reported metrics.
+To run the model's forward path on the 14 bundled UAST samples, use Python 3.10–3.12:
 
-## Repository Structure
+```sh
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-demo.txt
+python run.py sample --output outputs/sample.json
+python scripts/run_experiment_smoke_tests.py --output outputs/smoke.json
+```
+
+The sample and smoke checks run on CPU without pretrained-model downloads. [Environment options](docs/experiments.md#environment).
+
+## Main results
+
+Identifier robustness from Table 1 (Top-1 accuracy, %):
+
+| Model | Clean (C0) | Full stripping (C4) | Retention C4/C0 |
+| --- | ---: | ---: | ---: |
+| GraphCodeBERT-base | 96.59 | 13.89 | 0.144 |
+| TF-IDF + LR | 93.62 | 12.63 | 0.135 |
+| GNN-only, structure | 47.79 | 47.79 | **1.000** |
+| SymAlign, geometry-only | 31.91 | 31.91 | **1.000** |
+
+Structural invariance preserves performance under identifier corruption, with lower clean accuracy than the surface-form models. These rows summarize five seed records; GNN-only reuses a fixed pretrained checkpoint. The full SymAlign symbolic variants are evaluated separately in Experiment 3.
+
+## Experiments
+
+| Task | Where to start |
+| --- | --- |
+| Recompute tables from saved results | [Reproduction guide](docs/reproduction.md) |
+| Draw robustness, geometry, and symbolic-control plots | `python -m pip install -r requirements-reproduce.txt`, then `python run.py reproduce --plots` |
+| Run B1–B5 identifier-robustness experiments | [Experiment 1](docs/experiments.md#experiment-1-identifier-robustness) |
+| Run E1–E4 geometry ablations | [Experiment 2](docs/experiments.md#experiment-2-geometry-ablation) |
+| Run S0–S6 symbolic controls | [Experiment 3](docs/experiments.md#experiment-3-symbolic-regularization) |
+| Prepare corpus inputs and checkpoints | [Data guide](docs/data.md) |
+
+Full training requires separately acquired corpus inputs, checkpoints, and the research dependencies. The bundled samples exercise the implementation; they are not the full training dataset.
 
 ```text
-symalign_uast/
-├── src/
-│   ├── models/          # GAT encoder, hyperbolic aligner, Poincaré ops
-│   ├── data/            # UAST parser, obfuscation, symbolic evidence
-│   ├── losses/          # Neuro-symbolic loss functions
-│   ├── knowledge/       # Domain ontology, symbolic taxonomy
-│   └── evaluation/      # Metrics, statistical analysis
-├── experiments/
-│   ├── exp1_robustness/ # Experiment 1: identity-agnostic robustness
-│   ├── exp2_geometry/   # Experiment 2: geometry ablation
-│   └── exp3_symbolic/   # Experiment 3: symbolic regularization
-├── baselines/           # TF-IDF+LR, GNN-only, pretrained model baselines
-├── data/samples/        # 14 representative UAST graphs spanning 11 domains
-├── pyproject.toml        # Poetry environment for the public demo
-├── requirements.txt      # Legacy research dependencies
-└── scripts/              # Sample pipeline and experiment smoke tests
+src/              Graph encoding, alignment, symbolic losses, and evaluation
+experiments/      Training and Experiment 1–3 implementations
+baselines/        Baseline implementations
+data/             UAST samples and saved experiment results
+assets/           Framework diagram, paper, poster, and paper figures
+docs/             Experiment commands, data formats, and reproduction notes
+scripts/          Sample checks and result visualization
+tests/            Result-integrity and aggregation checks
 ```
 
-## Data and Reproducibility
+## Citation
 
-This release includes only representative identifier-stripped UAST samples and
-a synthetic obfuscation illustration. It does not distribute the complete
-experimental corpus, train/test partitions, intermediate graph caches, trained
-checkpoints, or semantic embeddings.
+```bibtex
+@inproceedings{baeg2026symalign,
+  title     = {SymAlign-UAST: Neuro-Symbolic Code Understanding via Hyperbolic Geometry and Structural Invariance},
+  author    = {Baeg, Kwangje and Kim, Hoyeob and Villacis, Janaina},
+  booktitle = {International Conference on Neurosymbolic Learning and Reasoning (NeSy)},
+  year      = {2026}
+}
+```
 
-Consequently, `run_sample_pipeline.py` is an independently executable
-implementation check, not a rerun of the paper's training protocol or a
-reconstruction of reported metrics and tables. The experiment directories
-preserve the implementations for the paper's evaluation settings, but their
-full runs require the non-distributed corpus and experiment artifacts.
-
-The bundled symbolic knowledge base (`src/knowledge/domain_ontology.json`) is
-likewise a small illustrative sample for exercising the pipeline end-to-end,
-not the full ontology used to produce the paper's reported tables.
-
-## Experiments in the paper
-
-**Experiment 1: Identity-Agnostic Robustness.** Five representation families
-are trained on clean code and evaluated under five identifier-obfuscation
-conditions, from clean input (C0) through complete identifier stripping (C4).
-The primary comparison is the retention ratio C4/C0, which separates
-structure-only invariance from surface-form accuracy when identifiers remain
-available.
-
-**Experiment 2: Geometric Generalization.** A controlled five-seed ablation
-compares classifier-only, Euclidean-contrastive, hybrid-hyperbolic, and fully
-hyperbolic variants. It measures in-distribution accuracy, zero-shot retrieval,
-and geometry diagnostics such as class separation and norm-depth correlation
-to isolate the effect of the retrieval space while holding the GAT encoder fixed
-for E1--E3.
-
-**Experiment 3: Symbolic Regularization Analysis.** With the hybrid
-hyperbolic backbone fixed, this study compares no symbolic loss, soft
-regularization variants, a shuffled-ontology control, and hard post-hoc
-correction. It evaluates predictive accuracy alongside logic-violation rate,
-calibration, entropy--violation alignment, and zero-shot retrieval.
-
-For the broader research environment, install `requirements.txt`. Some legacy
-preprocessing and full-experiment modules additionally expect unavailable raw
-code inputs or experiment outputs; they are not public entrypoints.
+Code: [Apache-2.0](LICENSE). Third-party code, data, and models retain their original licences; see [DATA_NOTICE.md](DATA_NOTICE.md).

@@ -1,0 +1,2 @@
+# Optional plotting only. Saved-result aggregation uses the standard library.
+matplotlib>=3.8,<4

@@ -1,0 +1,5 @@
+# CPU sample pipeline; use Python 3.10--3.12.
+torch>=2.2,<2.7
+torch-geometric>=2.5,<2.7
+numpy>=1.26,<3
+scikit-learn>=1.4,<1.7

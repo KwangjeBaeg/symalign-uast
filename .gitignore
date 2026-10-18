@@ -20,6 +20,7 @@ ENV/
 
 # Data & model artifacts (too large for repo)
 data/uast_files/
+data/corpus/
 data/*.pkl
 data/*.pt
 data/*.bin
@@ -29,8 +30,10 @@ data/*.bin
 *.h5
 
 # Results & checkpoints
-results/
-checkpoints/
+/results/
+/outputs/
+/experiments/results/
+/checkpoints/
 *.ckpt
 *.safetensors
 

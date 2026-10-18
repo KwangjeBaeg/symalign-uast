@@ -1,0 +1,817 @@
+{
+  "taxonomy_coverage": {
+    "total_files": 11610,
+    "empty_behavioral_count": 466,
+    "empty_behavioral_rate": 0.040137812230835485,
+    "structural_zero_count": 0,
+    "structural_zero_rate": 0.0,
+    "category_activation_rates": {
+      "data_io": 0.1500430703163147,
+      "math_compute": 0.53652024269104,
+      "network_comm": 0.21205857396125793,
+      "visualization": 0.11274763196706772,
+      "model_training": 0.6450473666191101,
+      "text_processing": 0.4043927788734436,
+      "system_ops": 0.2889750301837921
+    },
+    "activation_count_distribution": {
+      "0": 466,
+      "1": 3524,
+      "2": 3142,
+      "3": 2015,
+      "4": 1329,
+      "5": 753,
+      "6": 320,
+      "7": 61
+    },
+    "mean_active_categories": 2.3497846126556396,
+    "structural_means": {
+      "func_ratio": 0.08603588491678238,
+      "class_ratio": 0.017741374671459198,
+      "call_ratio": 0.507239580154419,
+      "pkg_ratio": 0.10599380731582642,
+      "comment_ratio": 0.2535581886768341,
+      "call_to_func": 0.1504088044166565,
+      "avg_children": 0.09705687314271927
+    }
+  },
+  "exclusion_validity": {
+    "total_files_with_domains": 7774,
+    "exclusion_pair_analysis": [
+      {
+        "pair": [
+          "Quantum Computing",
+          "Web Development"
+        ],
+        "d1_count": 698,
+        "d2_count": 220,
+        "co_occur_count": 49,
+        "co_occur_rate": 0.006303061487007975,
+        "conditional_rate_d1": 0.07020057306590258,
+        "conditional_rate_d2": 0.22272727272727272
+      },
+      {
+        "pair": [
+          "Quantum Computing",
+          "Game Development"
+        ],
+        "d1_count": 698,
+        "d2_count": 0,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0
+      },
+      {
+        "pair": [
+          "Quantum Computing",
+          "GUI"
+        ],
+        "d1_count": 698,
+        "d2_count": 61,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "Quantum Computing",
+          "Database"
+        ],
+        "d1_count": 698,
+        "d2_count": 0,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0
+      },
+      {
+        "pair": [
+          "Quantum Computing",
+          "DevOps"
+        ],
+        "d1_count": 698,
+        "d2_count": 310,
+        "co_occur_count": 3,
+        "co_occur_rate": 0.00038590172369436584,
+        "conditional_rate_d1": 0.004297994269340974,
+        "conditional_rate_d2": 0.00967741935483871
+      },
+      {
+        "pair": [
+          "Game Development",
+          "Database"
+        ],
+        "d1_count": 0,
+        "d2_count": 0,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0,
+        "conditional_rate_d2": 0
+      },
+      {
+        "pair": [
+          "Game Development",
+          "DevOps"
+        ],
+        "d1_count": 0,
+        "d2_count": 310,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "Game Development",
+          "Cloud Computing"
+        ],
+        "d1_count": 0,
+        "d2_count": 44,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "GUI",
+          "DevOps"
+        ],
+        "d1_count": 61,
+        "d2_count": 310,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "GUI",
+          "Networking"
+        ],
+        "d1_count": 61,
+        "d2_count": 255,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "GUI",
+          "Cloud Computing"
+        ],
+        "d1_count": 61,
+        "d2_count": 44,
+        "co_occur_count": 0,
+        "co_occur_rate": 0.0,
+        "conditional_rate_d1": 0.0,
+        "conditional_rate_d2": 0.0
+      },
+      {
+        "pair": [
+          "Web Development",
+          "Systems Programming"
+        ],
+        "d1_count": 220,
+        "d2_count": 1370,
+        "co_occur_count": 26,
+        "co_occur_rate": 0.0033444816053511705,
+        "conditional_rate_d1": 0.11818181818181818,
+        "conditional_rate_d2": 0.01897810218978102
+      },
+      {
+        "pair": [
+          "Web Development",
+          "Scientific Computing"
+        ],
+        "d1_count": 220,
+        "d2_count": 1430,
+        "co_occur_count": 70,
+        "co_occur_rate": 0.009004373552868537,
+        "conditional_rate_d1": 0.3181818181818182,
+        "conditional_rate_d2": 0.04895104895104895
+      },
+      {
+        "pair": [
+          "Web Development",
+          "Quantum Computing"
+        ],
+        "d1_count": 220,
+        "d2_count": 698,
+        "co_occur_count": 49,
+        "co_occur_rate": 0.006303061487007975,
+        "conditional_rate_d1": 0.22272727272727272,
+        "conditional_rate_d2": 0.07020057306590258
+      }
+    ],
+    "domain_list": [
+      "Cloud Computing",
+      "Data Processing",
+      "DevOps",
+      "GUI",
+      "Machine Learning",
+      "Networking",
+      "Quantum Computing",
+      "Science",
+      "Scientific Computing",
+      "Security",
+      "Systems Programming",
+      "Testing",
+      "Unknown",
+      "Web",
+      "Web Development"
+    ],
+    "cooccurrence_matrix": [
+      [
+        44,
+        29,
+        0,
+        0,
+        0,
+        9,
+        2,
+        0,
+        0,
+        2,
+        6,
+        13,
+        16,
+        25,
+        0
+      ],
+      [
+        29,
+        1795,
+        65,
+        3,
+        33,
+        154,
+        187,
+        109,
+        334,
+        122,
+        409,
+        286,
+        234,
+        504,
+        109
+      ],
+      [
+        0,
+        65,
+        310,
+        0,
+        0,
+        16,
+        3,
+        0,
+        1,
+        15,
+        124,
+        5,
+        18,
+        109,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        61,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        12,
+        0,
+        7,
+        26,
+        0
+      ],
+      [
+        0,
+        33,
+        0,
+        0,
+        80,
+        0,
+        28,
+        1,
+        27,
+        1,
+        19,
+        15,
+        7,
+        24,
+        0
+      ],
+      [
+        9,
+        154,
+        16,
+        0,
+        0,
+        255,
+        18,
+        0,
+        7,
+        95,
+        101,
+        23,
+        20,
+        152,
+        9
+      ],
+      [
+        2,
+        187,
+        3,
+        0,
+        28,
+        18,
+        698,
+        8,
+        116,
+        5,
+        140,
+        233,
+        56,
+        264,
+        49
+      ],
+      [
+        0,
+        109,
+        0,
+        0,
+        1,
+        0,
+        8,
+        1370,
+        171,
+        1,
+        62,
+        23,
+        43,
+        88,
+        0
+      ],
+      [
+        0,
+        334,
+        1,
+        5,
+        27,
+        7,
+        116,
+        171,
+        1430,
+        8,
+        147,
+        155,
+        127,
+        207,
+        70
+      ],
+      [
+        2,
+        122,
+        15,
+        0,
+        1,
+        95,
+        5,
+        1,
+        8,
+        238,
+        61,
+        29,
+        24,
+        169,
+        3
+      ],
+      [
+        6,
+        409,
+        124,
+        12,
+        19,
+        101,
+        140,
+        62,
+        147,
+        61,
+        1370,
+        291,
+        226,
+        415,
+        26
+      ],
+      [
+        13,
+        286,
+        5,
+        0,
+        15,
+        23,
+        233,
+        23,
+        155,
+        29,
+        291,
+        2039,
+        173,
+        265,
+        5
+      ],
+      [
+        16,
+        234,
+        18,
+        7,
+        7,
+        20,
+        56,
+        43,
+        127,
+        24,
+        226,
+        173,
+        801,
+        272,
+        18
+      ],
+      [
+        25,
+        504,
+        109,
+        26,
+        24,
+        152,
+        264,
+        88,
+        207,
+        169,
+        415,
+        265,
+        272,
+        2068,
+        12
+      ],
+      [
+        0,
+        109,
+        0,
+        0,
+        0,
+        9,
+        49,
+        0,
+        70,
+        3,
+        26,
+        5,
+        18,
+        12,
+        220
+      ]
+    ]
+  },
+  "domain_evidence_profiles": {
+    "Cloud Computing": {
+      "count": 14,
+      "behavioral_means": {
+        "data_io": 0.2142857164144516,
+        "math_compute": 0.0,
+        "network_comm": 0.8571428656578064,
+        "visualization": 0.0714285746216774,
+        "model_training": 0.0,
+        "text_processing": 0.3571428656578064,
+        "system_ops": 0.2142857164144516
+      },
+      "structural_means": {
+        "func_ratio": 0.1056680679321289,
+        "class_ratio": 0.0076272934675216675,
+        "call_ratio": 0.5028656721115112,
+        "pkg_ratio": 0.14257192611694336,
+        "comment_ratio": 0.19757993519306183,
+        "call_to_func": 0.10913082212209702,
+        "avg_children": 0.09563128650188446
+      },
+      "empty_behavioral_rate": 0.14285714285714285
+    },
+    "Data Processing": {
+      "count": 877,
+      "behavioral_means": {
+        "data_io": 0.5005701184272766,
+        "math_compute": 0.5188141465187073,
+        "network_comm": 0.3169897496700287,
+        "visualization": 0.1755986362695694,
+        "model_training": 0.5940706729888916,
+        "text_processing": 0.6944127678871155,
+        "system_ops": 0.4401368200778961
+      },
+      "structural_means": {
+        "func_ratio": 0.08672776073217392,
+        "class_ratio": 0.024136122316122055,
+        "call_ratio": 0.5357838869094849,
+        "pkg_ratio": 0.09366126358509064,
+        "comment_ratio": 0.24107195436954498,
+        "call_to_func": 0.1796829104423523,
+        "avg_children": 0.09813810139894485
+      },
+      "empty_behavioral_rate": 0.043329532497149374
+    },
+    "DevOps": {
+      "count": 155,
+      "behavioral_means": {
+        "data_io": 0.47096773982048035,
+        "math_compute": 0.23225806653499603,
+        "network_comm": 0.5354838967323303,
+        "visualization": 0.04516129195690155,
+        "model_training": 0.17419354617595673,
+        "text_processing": 0.6451612710952759,
+        "system_ops": 0.5806451439857483
+      },
+      "structural_means": {
+        "func_ratio": 0.07111621648073196,
+        "class_ratio": 0.021402880549430847,
+        "call_ratio": 0.455741286277771,
+        "pkg_ratio": 0.15702196955680847,
+        "comment_ratio": 0.23198872804641724,
+        "call_to_func": 0.07738613337278366,
+        "avg_children": 0.09372709691524506
+      },
+      "empty_behavioral_rate": 0.12258064516129032
+    },
+    "GUI": {
+      "count": 48,
+      "behavioral_means": {
+        "data_io": 0.0833333358168602,
+        "math_compute": 0.2291666716337204,
+        "network_comm": 0.5,
+        "visualization": 0.4166666567325592,
+        "model_training": 0.0833333358168602,
+        "text_processing": 0.3125,
+        "system_ops": 0.3125
+      },
+      "structural_means": {
+        "func_ratio": 0.08133082836866379,
+        "class_ratio": 0.01775679551064968,
+        "call_ratio": 0.5075806379318237,
+        "pkg_ratio": 0.07937711477279663,
+        "comment_ratio": 0.2946179211139679,
+        "call_to_func": 0.26647284626960754,
+        "avg_children": 0.09806632995605469
+      },
+      "empty_behavioral_rate": 0.14583333333333334
+    },
+    "Machine Learning": {
+      "count": 44,
+      "behavioral_means": {
+        "data_io": 0.3181818127632141,
+        "math_compute": 0.9772727489471436,
+        "network_comm": 0.27272728085517883,
+        "visualization": 0.2954545319080353,
+        "model_training": 1.0,
+        "text_processing": 0.5454545617103577,
+        "system_ops": 0.25
+      },
+      "structural_means": {
+        "func_ratio": 0.05999467149376869,
+        "class_ratio": 0.012402812018990517,
+        "call_ratio": 0.5507376194000244,
+        "pkg_ratio": 0.12224522233009338,
+        "comment_ratio": 0.241176038980484,
+        "call_to_func": 0.2563565969467163,
+        "avg_children": 0.09865562617778778
+      },
+      "empty_behavioral_rate": 0.0
+    },
+    "Networking": {
+      "count": 85,
+      "behavioral_means": {
+        "data_io": 0.364705890417099,
+        "math_compute": 0.20000000298023224,
+        "network_comm": 0.9529411792755127,
+        "visualization": 0.07058823853731155,
+        "model_training": 0.1411764770746231,
+        "text_processing": 0.658823549747467,
+        "system_ops": 0.4117647111415863
+      },
+      "structural_means": {
+        "func_ratio": 0.1200396716594696,
+        "class_ratio": 0.021138057112693787,
+        "call_ratio": 0.46574729681015015,
+        "pkg_ratio": 0.1258791834115982,
+        "comment_ratio": 0.2422151416540146,
+        "call_to_func": 0.10854252427816391,
+        "avg_children": 0.09750193357467651
+      },
+      "empty_behavioral_rate": 0.011764705882352941
+    },
+    "Quantum Computing": {
+      "count": 327,
+      "behavioral_means": {
+        "data_io": 0.08256880939006805,
+        "math_compute": 0.37308868765830994,
+        "network_comm": 0.1651376187801361,
+        "visualization": 0.07339449226856232,
+        "model_training": 0.5259938836097717,
+        "text_processing": 0.2568807303905487,
+        "system_ops": 0.3822630047798157
+      },
+      "structural_means": {
+        "func_ratio": 0.06731459498405457,
+        "class_ratio": 0.02214016206562519,
+        "call_ratio": 0.4115176796913147,
+        "pkg_ratio": 0.10838919878005981,
+        "comment_ratio": 0.3634026348590851,
+        "call_to_func": 0.11508384346961975,
+        "avg_children": 0.09727643430233002
+      },
+      "empty_behavioral_rate": 0.07033639143730887
+    },
+    "Science": {
+      "count": 1108,
+      "behavioral_means": {
+        "data_io": 0.05505415052175522,
+        "math_compute": 1.0,
+        "network_comm": 0.13267147541046143,
+        "visualization": 0.023465704172849655,
+        "model_training": 0.25451263785362244,
+        "text_processing": 0.33754512667655945,
+        "system_ops": 0.11552346497774124
+      },
+      "structural_means": {
+        "func_ratio": 0.10520313680171967,
+        "class_ratio": 0.012237954884767532,
+        "call_ratio": 0.6826183199882507,
+        "pkg_ratio": 0.0977833941578865,
+        "comment_ratio": 0.07820294797420502,
+        "call_to_func": 0.25363171100616455,
+        "avg_children": 0.09760458022356033
+      },
+      "empty_behavioral_rate": 0.0
+    },
+    "Scientific Computing": {
+      "count": 1064,
+      "behavioral_means": {
+        "data_io": 0.10244360566139221,
+        "math_compute": 0.9229323267936707,
+        "network_comm": 0.19266916811466217,
+        "visualization": 0.39379698038101196,
+        "model_training": 0.7330827116966248,
+        "text_processing": 0.4821428656578064,
+        "system_ops": 0.25563910603523254
+      },
+      "structural_means": {
+        "func_ratio": 0.06956321001052856,
+        "class_ratio": 0.007034264039248228,
+        "call_ratio": 0.6309917569160461,
+        "pkg_ratio": 0.090782031416893,
+        "comment_ratio": 0.18583127856254578,
+        "call_to_func": 0.2099260836839676,
+        "avg_children": 0.09842024743556976
+      },
+      "empty_behavioral_rate": 0.0018796992481203006
+    },
+    "Security": {
+      "count": 178,
+      "behavioral_means": {
+        "data_io": 0.5393258333206177,
+        "math_compute": 0.5449438095092773,
+        "network_comm": 0.617977499961853,
+        "visualization": 0.02247191034257412,
+        "model_training": 0.5,
+        "text_processing": 0.7808988690376282,
+        "system_ops": 0.5786516666412354
+      },
+      "structural_means": {
+        "func_ratio": 0.12378469854593277,
+        "class_ratio": 0.026773538440465927,
+        "call_ratio": 0.5697663426399231,
+        "pkg_ratio": 0.10934094339609146,
+        "comment_ratio": 0.14525385200977325,
+        "call_to_func": 0.10814762115478516,
+        "avg_children": 0.09749194234609604
+      },
+      "empty_behavioral_rate": 0.1797752808988764
+    },
+    "Systems Programming": {
+      "count": 688,
+      "behavioral_means": {
+        "data_io": 0.44622093439102173,
+        "math_compute": 0.47093021869659424,
+        "network_comm": 0.447674423456192,
+        "visualization": 0.11918604373931885,
+        "model_training": 0.5348837375640869,
+        "text_processing": 0.7732558250427246,
+        "system_ops": 0.7587209343910217
+      },
+      "structural_means": {
+        "func_ratio": 0.09436323493719101,
+        "class_ratio": 0.012009631842374802,
+        "call_ratio": 0.5415295958518982,
+        "pkg_ratio": 0.10104447603225708,
+        "comment_ratio": 0.2352781444787979,
+        "call_to_func": 0.14980196952819824,
+        "avg_children": 0.09842250496149063
+      },
+      "empty_behavioral_rate": 0.015988372093023256
+    },
+    "Testing": {
+      "count": 1454,
+      "behavioral_means": {
+        "data_io": 0.08940853178501129,
+        "math_compute": 0.5935350656509399,
+        "network_comm": 0.1602475941181183,
+        "visualization": 0.05020632594823837,
+        "model_training": 0.763411283493042,
+        "text_processing": 0.29642367362976074,
+        "system_ops": 0.286795049905777
+      },
+      "structural_means": {
+        "func_ratio": 0.09214659035205841,
+        "class_ratio": 0.018887607380747795,
+        "call_ratio": 0.601466715335846,
+        "pkg_ratio": 0.08120416849851608,
+        "comment_ratio": 0.190273717045784,
+        "call_to_func": 0.18249034881591797,
+        "avg_children": 0.0983978733420372
+      },
+      "empty_behavioral_rate": 0.0405777166437414
+    },
+    "Unknown": {
+      "count": 439,
+      "behavioral_means": {
+        "data_io": 0.1822323501110077,
+        "math_compute": 0.5808656215667725,
+        "network_comm": 0.446469247341156,
+        "visualization": 0.09339407831430435,
+        "model_training": 0.6651480793952942,
+        "text_processing": 0.6287015676498413,
+        "system_ops": 0.6036446690559387
+      },
+      "structural_means": {
+        "func_ratio": 0.10532674938440323,
+        "class_ratio": 0.028949076309800148,
+        "call_ratio": 0.503778338432312,
+        "pkg_ratio": 0.0756520926952362,
+        "comment_ratio": 0.2713061571121216,
+        "call_to_func": 0.14041736721992493,
+        "avg_children": 0.09850124269723892
+      },
+      "empty_behavioral_rate": 0.07972665148063782
+    },
+    "Web": {
+      "count": 1118,
+      "behavioral_means": {
+        "data_io": 0.10107334703207016,
+        "math_compute": 0.44275492429733276,
+        "network_comm": 0.3264758586883545,
+        "visualization": 0.03041144832968712,
+        "model_training": 0.6431127190589905,
+        "text_processing": 0.43828263878822327,
+        "system_ops": 0.24150268733501434
+      },
+      "structural_means": {
+        "func_ratio": 0.1207115426659584,
+        "class_ratio": 0.022092580795288086,
+        "call_ratio": 0.4094817638397217,
+        "pkg_ratio": 0.12294936925172806,
+        "comment_ratio": 0.29991135001182556,
+        "call_to_func": 0.10200992971658707,
+        "avg_children": 0.09751465916633606
+      },
+      "empty_behavioral_rate": 0.08586762075134168
+    },
+    "Web Development": {
+      "count": 175,
+      "behavioral_means": {
+        "data_io": 0.2914285659790039,
+        "math_compute": 0.38285714387893677,
+        "network_comm": 0.11999999731779099,
+        "visualization": 0.6228571534156799,
+        "model_training": 0.4399999976158142,
+        "text_processing": 0.7085714340209961,
+        "system_ops": 0.23428571224212646
+      },
+      "structural_means": {
+        "func_ratio": 0.14198407530784607,
+        "class_ratio": 0.02606729418039322,
+        "call_ratio": 0.5308340191841125,
+        "pkg_ratio": 0.12899498641490936,
+        "comment_ratio": 0.10914190113544464,
+        "call_to_func": 0.12354832142591476,
+        "avg_children": 0.09370221942663193
+      },
+      "empty_behavioral_rate": 0.13142857142857142
+    }
+  }
+}

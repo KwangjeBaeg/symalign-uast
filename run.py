@@ -4,6 +4,8 @@ Unified CLI entry point for SymAlign-UAST experiments.
     python run.py <command> [options]
 
 Commands:
+    reproduce   Recompute tables from the bundled frozen experiment records.
+                 Uses Python's standard library; no models or corpus required.
     sample      Run the bundled public demo on the 14 sample UAST graphs.
                  Needs no external data; this is what CI / a fresh clone can run.
     gnn         Train the structure-only GNN baseline (Table 1 "GNN-only").
@@ -14,15 +16,14 @@ Commands:
     symalign    Train the full SymAlign-UAST model end to end
                  (GAT encoder + hyperbolic alignment + symbolic regularization).
 
-`sample` runs out of the box on a fresh clone. The other commands operate on
-the paper's full training corpus, which is not distributed in this repository
-(see README: "Data and Reproducibility"). Point --dataset / --uast-dir /
---library-to-concept / --library-concepts at your own copy of the corpus to
-reproduce the paper's tables; the default paths follow the layout already
-assumed by experiments/config.py.
+`reproduce` needs only Python. `sample` needs the demo dependencies. Training
+commands operate on separately acquired corpus inputs. Point --dataset /
+--uast-dir / --library-to-concept / --library-concepts at the formats described
+in docs/data.md. The local default layout is data/corpus/; complete retraining
+also requires the matching checkpoints, ontology, and research environment.
 
-Hyperparameter defaults below match the values reported in the paper
-(Appendix B: Hyperparameter Sensitivity).
+See docs/experiments.md for the original and follow-up configurations and
+the distinction between saved-result aggregation and model reruns.
 """
 
 import argparse
@@ -34,12 +35,11 @@ REPO_ROOT = Path(__file__).resolve().parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-DEFAULT_DATASET = REPO_ROOT / "Data_Extractor" / "extracted_data" / "dataset.json"
-DEFAULT_UAST_DIR = REPO_ROOT / "Data_Extractor" / "extracted_data" / "uast"
-DEFAULT_LIBRARY_TO_CONCEPT = (
-    REPO_ROOT / "extras" / "LLM interaction pipleline" / "libraries_concepts.json"
-)
-DEFAULT_RESULTS_DIR = REPO_ROOT / "results"
+DEFAULT_DATASET = REPO_ROOT / "data" / "corpus" / "dataset.json"
+DEFAULT_UAST_DIR = REPO_ROOT / "data" / "corpus" / "uast"
+DEFAULT_LIBRARY_TO_CONCEPT = REPO_ROOT / "data" / "corpus" / "library_to_concept.json"
+DEFAULT_LIBRARY_CONCEPTS = REPO_ROOT / "data" / "corpus" / "library_concepts.json"
+DEFAULT_RESULTS_DIR = REPO_ROOT / "outputs"
 
 
 def _load_json(path: Path):
@@ -62,7 +62,7 @@ def _add_corpus_args(sub: argparse.ArgumentParser, need_library_concepts: bool =
     )
     if need_library_concepts:
         sub.add_argument(
-            "--library-concepts", type=Path, default=DEFAULT_LIBRARY_TO_CONCEPT,
+            "--library-concepts", type=Path, default=DEFAULT_LIBRARY_CONCEPTS,
             help="JSON file with library concept descriptions for semantic embedding.",
         )
     sub.add_argument(
@@ -71,6 +71,18 @@ def _add_corpus_args(sub: argparse.ArgumentParser, need_library_concepts: bool =
     )
     sub.add_argument("--device", default="cuda", choices=["cuda", "cpu"])
     sub.add_argument("--seed", type=int, default=42)
+
+
+def cmd_reproduce(args: argparse.Namespace) -> None:
+    from src.evaluation.reproduce_results import reproduce
+
+    report = reproduce(args.output, args.data_dir)
+    if args.plots:
+        from scripts.plot_results import plot_results
+        plot_results(report, args.output / "figures")
+    print(f"Verified {len(report['integrity'])} frozen result files.")
+    print(f"Recomputed summaries; {len(report['paper_comparison']['differences'])} documented paper-cell differences.")
+    print(f"Wrote tables and JSON to {args.output}")
 
 
 def cmd_sample(args: argparse.Namespace) -> None:
@@ -86,7 +98,7 @@ def cmd_gnn(args: argparse.Namespace) -> None:
 
     dataset = _load_json(args.dataset)
     library_to_concept = _load_json(args.library_to_concept)
-    result = run_phase2_experiment(
+    result, _, _ = run_phase2_experiment(
         dataset=dataset,
         library_to_concept=library_to_concept,
         uast_dir=str(args.uast_dir),
@@ -229,6 +241,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
+    p_reproduce = sub.add_parser("reproduce", help="Recompute summaries from saved results (no ML dependencies).")
+    p_reproduce.add_argument("--output", type=Path, default=REPO_ROOT / "outputs" / "reproduced")
+    p_reproduce.add_argument("--data-dir", type=Path, default=REPO_ROOT / "data" / "results")
+    p_reproduce.add_argument("--plots", action="store_true", help="Also draw summary plots; requires matplotlib.")
+    p_reproduce.set_defaults(func=cmd_reproduce)
+
     p_sample = sub.add_parser("sample", help="Run the bundled public demo (no private data needed).")
     p_sample.add_argument("--output", type=Path, default=None)
     p_sample.set_defaults(func=cmd_sample)
@@ -311,6 +329,25 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
+    if args.command not in {"reproduce", "sample"}:
+        paths = [("--dataset", args.dataset), ("--uast-dir", args.uast_dir),
+                 ("--library-to-concept", args.library_to_concept)]
+        for option in ("library_concepts", "phase2_model_path", "phase2_label_encoder_path", "ontology_path"):
+            if getattr(args, option, None) is not None:
+                paths.append(("--" + option.replace("_", "-"), getattr(args, option)))
+        for option, path in paths:
+            valid = path.is_dir() if option == "--uast-dir" else path.is_file()
+            if not valid:
+                parser.error(f"{option}: missing input {path}. See docs/data.md; the full corpus is acquired separately.")
+        if args.command in {"gnn", "symalign"}:
+            import random
+            import numpy as np
+            import torch
+            random.seed(args.seed)
+            np.random.seed(args.seed)
+            torch.manual_seed(args.seed)
+            if torch.cuda.is_available():
+                torch.cuda.manual_seed_all(args.seed)
     args.func(args)
 
 

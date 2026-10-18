@@ -1,0 +1,59 @@
+{
+  "description": "Frozen author experiment outputs; unchanged source bytes. Paths are relative to the supplied Semantic-Analysis archive.",
+  "files": [
+    {
+      "file": "pretrained_robustness_results.json",
+      "source": "experiments/results/pretrained_robustness_results.json",
+      "bytes": 76878,
+      "sha256": "08598bac57e9ec26dbebb56c92ec031f06adab7b0ae3e03f2f1c2dad86208e81"
+    },
+    {
+      "file": "geometry_ablation_results.json",
+      "source": "experiments/results/geometry_ablation_results.json",
+      "bytes": 29291,
+      "sha256": "f6e18ade14231e85afe0a9062094e93a81307a0e9cf856252a6c046e3388de02"
+    },
+    {
+      "file": "exp1_followup_results.json",
+      "source": "experiments/results/exp1_followup_results.json",
+      "bytes": 15379,
+      "sha256": "301a905bed5a2052d442d7a01012956b1773c043b382658bf823c044ebd790fe"
+    },
+    {
+      "file": "exp03_all_results.json",
+      "source": "experiments/results/exp03_all_results.json",
+      "bytes": 27242,
+      "sha256": "093c6b4d2ce36b2b55b5076731bf2107503f19cc2102bae5b9b65ae2856b8c83"
+    },
+    {
+      "file": "ablation_results.json",
+      "source": "experiments/results/ablation_results.json",
+      "bytes": 26718,
+      "sha256": "76bf9c87bfa55eddccc99edfc5c970e6f4ba1b586f88c3c5dd1a4e85cf76c4eb"
+    },
+    {
+      "file": "symalign_results.json",
+      "source": "experiments/results/symalign_results.json",
+      "bytes": 3605,
+      "sha256": "2abbb1baa7e9625bf0f4209d590568ea9fd7cb166784ae8505629713e1b3df76"
+    },
+    {
+      "file": "symalign_supplementary_local.json",
+      "source": "experiments/results/symalign_supplementary_local.json",
+      "bytes": 20306,
+      "sha256": "b3215b30abec09f1429b5fee1c0fb0080aaa6360f9eee01a8c58e191c7841a85"
+    },
+    {
+      "file": "symalign_supplementary_gpu.json",
+      "source": "experiments/results/symalign_supplementary_gpu.json",
+      "bytes": 4241642,
+      "sha256": "f6091aa46d88943adb92096aeee2cab596ae00060dd8605ceaaaefc7624b8467"
+    },
+    {
+      "file": "paper_reference.json",
+      "source": "Transcribed printed cells from the author manuscript",
+      "bytes": 13186,
+      "sha256": "e4e4e61bd027b0d6ae05e9d8aba1d361c0bfe4a6dfe8439affae6e78f058fe77"
+    }
+  ]
+}

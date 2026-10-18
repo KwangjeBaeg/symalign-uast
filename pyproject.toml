@@ -1,7 +1,8 @@
 [project]
 name = "symalign-uast"
 version = "0.1.0"
-description = "Sample-only implementation release for SymAlign-UAST."
+description = "Code, saved experiment results, and sample pipeline for SymAlign-UAST."
+license = "Apache-2.0"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
